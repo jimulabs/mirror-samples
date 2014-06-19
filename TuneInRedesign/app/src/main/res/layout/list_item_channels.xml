@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<org.lucasr.twowayview.TwoWayView xmlns:android="http://schemas.android.com/apk/res/android"
+                                  android:id="@+id/horizontal_list"
+                                  android:orientation="horizontal"
+                                  android:drawSelectorOnTop="false"
+                                  android:layout_width="match_parent"
+                                  android:layout_height="wrap_content">
+
+</org.lucasr.twowayview.TwoWayView>

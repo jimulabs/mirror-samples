@@ -1,0 +1,9 @@
+<!-- Generated template screen file. Fill the id tags below with content
+with which to populate your previewed layout. For help with sample
+data, please see http://jimulabs.com/sample-data-specifications/ -->
+<screen>
+    <_content layout="@layout/list_item_title">
+        <time text="textview" />
+        <category text="Medium Text" />
+    </_content>
+</screen>

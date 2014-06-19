@@ -1,0 +1,15 @@
+<items layout="@layout/list_item_channel" count="1">
+    <_item>
+        <name>Suria FM</name>
+        <thumbnail src="channel1.png"/>
+    </_item>
+    <_item>
+        <name>Hot FM</name>
+        <thumbnail src="channel2.png"/>
+    </_item>
+    <_item>
+        <name>One FM</name>
+        <thumbnail src="channel3.png"/>
+        <button src="@drawable/ic_button_tick" />
+    </_item>
+</items>

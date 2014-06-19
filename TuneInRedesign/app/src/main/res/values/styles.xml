@@ -2,7 +2,11 @@
 
     <!-- Base application theme. -->
     <style name="AppTheme" parent="android:Theme.Holo.Light.DarkActionBar">
-        <!-- Customize your theme here. -->
+        <item name="android:windowBackground">@android:color/white</item>
+        <item name="android:actionBarStyle">@style/LightActionBar</item>
+        <item name="android:actionBarTabStyle">@style/LightActionBarTab</item>
+        <item name="android:actionBarTabTextStyle">@style/ActionBarTabText</item>
+        <item name="android:actionBarTabBarStyle">@style/LightActionBarTabBar</item>
     </style>
 
     <style name="DarkTheme" parent="android:Theme.Holo">
@@ -19,10 +23,24 @@
         <item name="android:fontFamily">sans-serif-condensed</item>
         <item name="android:textSize">15sp</item>
         <item name="android:textColor">@color/text_color</item>
+        <item name="android:textStyle">normal</item>
     </style>
 
-    <style name="NowPlayingText" >
+    <style name="NowPlayingText">
         <item name="android:fontFamily">sans-serif-light</item>
+    </style>
+
+    <style name="LightActionBar" parent="android:Widget.ActionBar">
+        <item name="android:background">@color/accent_color</item>
+    </style>
+
+    <style name="LightActionBarTab" parent="android:Widget.Holo.Light.ActionBar.TabView">
+        <item name="android:background">@color/accent_color</item>
+    </style>
+
+    <style name="LightActionBarTabBar" parent="android:Widget.Holo.ActionBar.TabBar">
+        <item name="android:divider">@drawable/light_actionbar_divider</item>
+        <item name="android:background">@color/accent_color</item>
     </style>
 
 </resources>
