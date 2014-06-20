@@ -5,7 +5,7 @@ data, please see http://jimulabs.com/sample-data-specifications/ -->
     <actionbar menu="@menu/now_playing" showTabsFor="@id/pager" icon="@drawable/ic_down_arrow"/>
     <_content layout="@layout/now_playing">
         <pager>
-            <_page layout="@layout/now" title="now">
+            <_page layout="@layout/nowplaying_fullscreen" title="now">
                 <title>Eason Chan - Admit it</title>
                 <subtitle>ONE FM</subtitle>
                 <image src="eason_chan.png" />

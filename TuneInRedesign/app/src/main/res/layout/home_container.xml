@@ -12,73 +12,10 @@
 
     </android.support.v4.view.ViewPager>
 
-    <LinearLayout
-            android:layout_alignParentBottom="true"
-            android:background="@drawable/background_gradient"
-            android:padding="10dp"
-            android:gravity="center_vertical"
+    <include
+            layout="@layout/nowplaying_mini"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content">
-
-        <ImageView
-                android:id="@+id/thumbnail"
-                android:padding="5dp"
-                android:layout_width="50dp"
-                android:layout_height="50dp"/>
-
-        <LinearLayout
-                android:orientation="vertical"
-                android:layout_weight="3"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content">
-
-            <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:textAppearance="?android:attr/textAppearanceSmallInverse"
-                    android:text="Large Text"
-                    android:singleLine="true"
-                    android:id="@+id/title"
-                    style="@style/NowPlayingText"
-                    android:layout_centerHorizontal="true"
-                    android:layout_alignParentTop="true"/>
-
-            <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:textAppearance="?android:attr/textAppearanceSmallInverse"
-                    android:textSize="10sp"
-                    android:text="Medium Text"
-                    style="@style/NowPlayingText"
-                    android:id="@+id/subtitle"
-                    android:layout_below="@id/title"
-                    android:layout_centerHorizontal="true"
-                    />
-        </LinearLayout>
-
-        <ImageButton
-                android:id="@+id/repeat"
-                style="@android:style/Widget.Holo.Button.Borderless"
-                android:src="@drawable/ic_repeat"
-                android:layout_weight="1"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"/>
-
-        <ImageButton
-                android:id="@+id/pause"
-                style="@android:style/Widget.Holo.Button.Borderless"
-                android:src="@drawable/ic_pause"
-                android:layout_weight="1"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"/>
-
-        <ImageButton
-                android:id="@+id/stop"
-                style="@android:style/Widget.Holo.Button.Borderless"
-                android:src="@drawable/ic_stop"
-                android:layout_weight="1"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"/>
-
-    </LinearLayout>
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            />
 </RelativeLayout>

@@ -2,6 +2,12 @@
 with which to populate your previewed layout. For help with sample
 data, please see http://jimulabs.com/sample-data-specifications/ -->
 <screen>
-    <_content layout="@layout/now">
+    <_content layout="@layout/nowplaying_mini">
+        <thumbnail></thumbnail>
+        <title text="Large Text" />
+        <subtitle text="Medium Text" />
+        <repeat></repeat>
+        <pause></pause>
+        <stop></stop>
     </_content>
 </screen>
