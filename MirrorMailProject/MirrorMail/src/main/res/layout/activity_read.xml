@@ -1,0 +1,126 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+    <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@android:color/white"
+            android:divider="@drawable/divider"
+            android:orientation="vertical"
+            android:showDividers="middle">
+
+        <RelativeLayout
+                android:id="@+id/subject_container"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/subject_section_height"
+                android:layout_marginBottom="@dimen/read_padding_top_bottom"
+                android:layout_marginTop="@dimen/read_padding_top_bottom">
+
+            <ImageView
+                    android:id="@+id/circle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/subject_circle_decal_margin_left"
+                    android:layout_marginRight="@dimen/subject_circle_decal_margin_right"
+                    android:src="@drawable/read_circle"/>
+
+            <TextView
+                    android:id="@+id/subject"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_toRightOf="@id/circle"
+                    android:includeFontPadding="false"
+                    android:textSize="@dimen/subject_text_size"/>
+
+            <TextView
+                    android:id="@+id/timestamp"
+                    android:layout_alignLeft="@id/subject"
+                    android:layout_below="@id/subject"
+                    android:layout_marginTop="@dimen/timestamp_top_margin"
+                    android:includeFontPadding="false"
+                    android:textSize="@dimen/time_stamp_text_size"
+                    style="@style/textHeading"/>
+
+
+            <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentRight="true"
+                    android:layout_alignTop="@id/circle"
+                    android:layout_marginRight="@dimen/read_padding_left_right"
+                    android:src="@drawable/read_ribbon"/>
+
+        </RelativeLayout>
+
+        <RelativeLayout
+                android:id="@+id/sender"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/sender_section_height">
+
+            <TextView
+                    android:id="@+id/sender_name"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+
+                    android:layout_marginLeft="@dimen/read_padding_left_right"
+                    android:background="@drawable/from_frame"
+                    android:textSize="@dimen/sender_text_size"/>
+
+            <TextView
+                    android:id="@+id/sender_details"
+                    android:layout_alignParentRight="true"
+                    android:layout_marginRight="@dimen/read_padding_left_right"
+                    android:text="@string/sender_details"
+                    android:textColor="@color/highlight_color"
+                    android:textSize="12sp"
+                    style="@style/centered"/>
+
+        </RelativeLayout>
+
+        <RelativeLayout
+                android:id="@+id/attachments_container"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/read_attachment_section_height">
+
+            <org.lucasr.twowayview.TwoWayView
+                    android:id="@+id/attachments_list"
+                    android:layout_width="fill_parent"
+                    android:layout_height="@dimen/preview_image_height"
+                    android:layout_marginTop="@dimen/read_padding_top_bottom"
+                    android:orientation="horizontal"/>
+
+            <ImageView
+                    android:id="@+id/paper_clip"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentBottom="true"
+                    android:layout_marginBottom="@dimen/read_padding_top_bottom"
+                    android:layout_marginLeft="@dimen/read_padding_left_right"
+                    android:layout_marginRight="@dimen/paper_clip_margin_right"
+                    android:src="@drawable/read_attach"/>
+
+            <TextView
+                    android:id="@+id/attachment_size_info"
+                    android:layout_alignTop="@id/paper_clip"
+                    android:layout_toRightOf="@id/paper_clip"
+                    android:textSize="@dimen/attachment_info_text_size"
+                    style="@style/textHeading"/>
+
+
+        </RelativeLayout>
+
+        <TextView
+                android:id="@+id/email_text"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginBottom="@dimen/read_padding_top_bottom"
+                android:layout_marginLeft="@dimen/read_padding_left_right"
+                android:layout_marginRight="@dimen/read_padding_left_right"
+                android:layout_marginTop="@dimen/read_padding_top_bottom"
+                android:textColor="@color/heading_text_color"/>
+
+    </LinearLayout>
+</ScrollView>

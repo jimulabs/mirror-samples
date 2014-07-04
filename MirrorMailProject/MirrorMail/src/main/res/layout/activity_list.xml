@@ -1,0 +1,58 @@
+<android.support.v4.widget.DrawerLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                                        android:id="@+id/drawer_layout"
+                                        android:layout_width="match_parent"
+                                        android:layout_height="match_parent">
+
+    <!-- The main content view -->
+    <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+        <ListView
+                android:id="@+id/mail_list"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:dividerHeight="1dp"
+                android:orientation="vertical"
+                />
+
+        <ImageView
+                android:layout_width="@dimen/pencil_width"
+                android:layout_height="@dimen/pencil_width"
+                android:layout_alignParentBottom="true"
+                android:layout_alignParentRight="true"
+                android:layout_marginRight="@dimen/pencil_margin_right"
+                android:layout_marginBottom="@dimen/pencil_margin_bottom"
+                android:src="@drawable/pencil"/>
+    </RelativeLayout>
+
+    <!-- The navigation drawer -->
+    <RelativeLayout
+            android:id="@+id/left_drawer"
+            android:layout_width="@dimen/drawer_width"
+            android:layout_height="match_parent"
+            android:layout_gravity="start"
+            android:background="@color/dark_background_color">
+
+        <ListView
+                android:id="@+id/avatar_list"
+                android:layout_width="@dimen/drawer_avatar_list_width"
+                android:layout_height="match_parent"
+                style="@style/customDividerList"/>
+
+        <ImageView
+                android:layout_width="@dimen/drawer_avatar_list_width"
+                android:layout_height="wrap_content"
+                android:paddingBottom="@dimen/drawer_avatar_list_gear_padding_bottom"
+                android:src="@drawable/gear"
+                android:layout_alignParentBottom="true"/>
+
+        <ListView
+                android:id="@+id/content_list"
+                android:layout_width="fill_parent"
+                android:layout_height="match_parent"
+                android:layout_toRightOf="@id/avatar_list"
+                android:paddingLeft="@dimen/drawer_item_padding_left"
+                style="@style/customDividerList"/>
+    </RelativeLayout>
+</android.support.v4.widget.DrawerLayout>

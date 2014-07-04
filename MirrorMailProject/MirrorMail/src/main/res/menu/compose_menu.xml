@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item android:id="@+id/action_add_attachment"
+          android:icon="@drawable/add_attachment"
+          android:orderInCategory="100"
+          android:showAsAction="always"/>
+    <item android:id="@+id/action_send"
+          android:icon="@drawable/compose_send"
+          android:orderInCategory="100"
+          android:showAsAction="always"/>
+</menu>

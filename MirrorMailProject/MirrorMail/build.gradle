@@ -1,0 +1,23 @@
+apply plugin: 'android'
+
+repositories {
+    mavenCentral()
+}
+
+android {
+    compileSdkVersion 19
+    buildToolsVersion "20.0.0"
+
+    defaultConfig {
+        minSdkVersion 15
+        targetSdkVersion 19
+    }
+
+}
+
+dependencies {
+    compile 'com.android.support:appcompat-v7:19.0.0'
+    compile 'com.android.support:support-v4:19.0.0'
+    compile 'com.android.support:support-v13:20.+'
+    compile 'org.lucasr.twowayview:twowayview:0.1.0'
+}

@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:minHeight="@dimen/drawer_item_height"
+                android:orientation="vertical">
+
+    <FrameLayout
+            android:id="@+id/drawer_icon_container"
+            android:layout_width="@dimen/drawer_icon_width"
+            android:layout_height="@dimen/drawer_icon_width"
+            android:layout_alignParentLeft="true"
+            android:layout_centerVertical="true">
+
+        <ImageView
+                android:id="@+id/drawer_icon"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"/>
+    </FrameLayout>
+
+    <TextView
+            android:id="@+id/drawer_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_toRightOf="@id/drawer_icon_container"
+            android:gravity="center_vertical"
+            android:paddingLeft="@dimen/drawer_item_title_padding_left"
+            android:textColor="@color/category_text_color"
+            android:textSize="@dimen/drawer_item_title_font_size"/>
+
+    <FrameLayout
+            android:id="@+id/drawer_mail_counter"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:paddingRight="10dp"
+            android:visibility="gone">
+
+        <ImageView
+                android:id="@+id/drawer_counter_icon"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/mail_counter"/>
+
+        <TextView
+                android:id="@+id/drawer_counter_value"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:textColor="@android:color/white"
+                android:gravity="center"/>
+    </FrameLayout>
+
+    <View
+            android:id="@+id/divider"
+            android:layout_width="match_parent"
+            android:layout_height="1px"
+            android:layout_alignParentBottom="true"
+            android:background="@android:color/black"/>
+</RelativeLayout>
