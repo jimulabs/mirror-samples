@@ -2,7 +2,7 @@
 <RelativeLayout
         xmlns:android="http://schemas.android.com/apk/res/android"
         xmlns:tools="http://schemas.android.com/tools"
-        android:id="@+id/now_playing"
+        android:id="@+id/nowplaying_container"
         android:clickable="true"
         android:background="@drawable/background_gradient"
         android:padding="10dp"

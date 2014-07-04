@@ -1,21 +1,8 @@
 <menu xmlns:android="http://schemas.android.com/apk/res/android"
-      xmlns:tools="http://schemas.android.com/tools"
-      tools:context=".MyActivity">
-    <item
-            android:id="@+id/share"
-            android:title="share"
-            android:icon="@android:drawable/ic_menu_share"
-            android:showAsAction="ifRoom"
-            />
-    <item
-            android:id="@+id/add"
-            android:title="add"
-            android:icon="@android:drawable/ic_menu_add"
-            android:showAsAction="ifRoom"
-            />
-    <item
-            android:id="@+id/action_settings"
-            android:title="@string/action_settings"
-            android:orderInCategory="100"
-            android:showAsAction="never"/>
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context="com.jimulabs.tuneinredesign.NowPlayingActivity" >
+    <item android:id="@+id/action_settings"
+        android:title="@string/action_settings"
+        android:orderInCategory="100"
+        android:showAsAction="never" />
 </menu>

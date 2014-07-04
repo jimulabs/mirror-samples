@@ -1,7 +1,7 @@
 <!-- Generated template screen file. Fill the id tags below with content
 with which to populate your previewed layout. For help with sample
 data, please see http://jimulabs.com/sample-data-specifications/ -->
-<screen>
+<screen script="js/home.js">
     <actionbar menu="@menu/home" icon="@drawable/logo" showTabsFor="@id/pager"/>
     <_content layout="@layout/home_container">
         <pager>

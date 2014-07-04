@@ -1,14 +1,14 @@
 <!-- Generated template screen file. Fill the id tags below with content
 with which to populate your previewed layout. For help with sample
 data, please see http://jimulabs.com/sample-data-specifications/ -->
-<screen theme="@style/DarkTheme">
+<screen theme="@style/DarkTheme" script="js/nowplaying.js">
     <actionbar menu="@menu/now_playing" showTabsFor="@id/pager" icon="@drawable/ic_down_arrow"/>
     <_content layout="@layout/now_playing">
         <pager>
             <_page layout="@layout/nowplaying_fullscreen" title="now">
                 <title>Eason Chan - Admit it</title>
                 <subtitle>ONE FM</subtitle>
-                <image src="eason_chan.png" />
+                <thumbnail src="eason_chan.png" />
                 <time>00:16</time>
             </_page>
             <_page layout="@android:layout/list_content" title="related"/>

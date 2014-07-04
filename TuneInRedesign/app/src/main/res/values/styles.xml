@@ -10,11 +10,16 @@
     </style>
 
     <style name="DarkTheme" parent="android:Theme.Holo">
-        <item name="android:windowBackground">@drawable/background_gradient</item>
+        <item name="android:windowIsTranslucent">false</item>
+        <item name="android:windowBackground">@android:color/transparent</item>
+        <!--<item name="android:background">@drawable/background_gradient</item>-->
+        <item name="android:actionBarStyle">@style/DarkActionBar</item>
         <item name="android:actionBarTabStyle">@style/DarkActionBarTab</item>
         <item name="android:actionBarTabTextStyle">@style/ActionBarTabText</item>
     </style>
 
+    <style name="DarkActionBar" parent="android:Widget.Holo.ActionBar">
+    </style>
 
     <style name="DarkActionBarTab" parent="android:Widget.Holo.ActionBar.TabView">
     </style>
