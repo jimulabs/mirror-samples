@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="separator_background">#77658bff</color>
+    <color name="share_inactive_background">#ffececec</color>
+    <color name="sku_inactive_pressed_color">#ffd5d5d5</color>
+    <color name="sku_item_description">#ff4f4f4f</color>
+    <color name="sku_item_inactive_background">#ffececec</color>
+    <color name="sku_item_inactive_price">#ffabacae</color>
+    <color name="sku_item_inactive_text">#ff727374</color>
+    <color name="sku_item_title_checked">#ff000000</color>
+</resources>

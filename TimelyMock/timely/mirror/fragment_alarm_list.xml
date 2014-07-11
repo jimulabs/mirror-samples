@@ -1,0 +1,15 @@
+<screen>
+    <_content layout="fragment_alarm_list">
+    <!--Generated screen file for fragment_alarm_list.xml-->
+    <!--  You can set properties (such as text and image) of a view in the above layout. 
+          For example:
+            <textView1>Hello World</textView1>
+            <imageView1 src="ic_launcher"/>
+            <listView1>
+               <_item layout="@android:layout/simple_list_item1">
+                  <text1>Some Text</text1>
+               </_item>
+            </listView>
+    -->
+    </_content>
+</screen>

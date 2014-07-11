@@ -1,0 +1,189 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <style name="AlarmScroll">
+        <item name="android:layout_weight">1.0</item>
+    </style>
+
+    <style name="AppTheme" parent="android:style/Theme.Holo">
+        <!--<item name="android:windowBackground">@android:color/black</item>-->
+        <item name="android:actionBarStyle">@style/ActionBar</item>
+        <item name="android:windowActionBarOverlay">true</item>
+        <item name="android:actionBarTabStyle">@style/ActionBarTab</item>
+        <!--<item name="android:checkBoxPreferenceStyle">@style/CheckBoxPreference</item>-->
+        <!--<item name="android:background">@null</item>-->
+        <!--<item name="android:windowActionBar">false</item>-->
+    </style>
+
+    <style name="ActionBar" parent="android:Widget.Holo.ActionBar">
+        <item name="android:background">@drawable/action_bar_background</item>
+        <item name="android:displayOptions">none</item>
+    </style>
+
+    <style name="ActionBarTab" parent="android:Widget.ActionBar.TabView">
+        <item name="android:background">@android:color/transparent</item>
+    </style>
+
+    <style name="AreaSeparator">
+        <item name="android:visibility">gone</item>
+    </style>
+
+    <style name="Button" parent="android:style/Widget.Holo.Button">
+        <item name="android:background">@drawable/tab_button</item>
+        <item name="android:minHeight">44.0dip</item>
+    </style>
+
+    <style name="CheckBoxPreference">
+        <!--
+        <item name="android:layout">@layout/preference_holo</item>
+        <item name="android:widgetLayout">@layout/preference_checkbox</item>
+        -->
+    </style>
+
+    <style name="CreditsContent">
+        <item name="android:textSize">14.0sp</item>
+        <item name="android:layout_marginLeft">16.0dip</item>
+        <item name="android:layout_marginRight">16.0dip</item>
+    </style>
+
+    <style name="CreditsTitle">
+        <item name="android:textSize">18.0sp</item>
+        <item name="android:layout_marginLeft">16.0dip</item>
+        <item name="android:layout_marginTop">12.0dip</item>
+        <item name="android:layout_marginRight">16.0dip</item>
+        <item name="android:layout_marginBottom">4.0dip</item>
+        <item name="android:fontFamily">sans-serif-light</item>
+    </style>
+
+    <style name="DetailContainerStyle">
+        <item name="android:layout_weight">1.5</item>
+    </style>
+
+    <style name="DialogAnimation">
+        <item name="android:windowEnterAnimation">@anim/dialog_enter</item>
+        <item name="android:windowExitAnimation">@null</item>
+    </style>
+
+    <style name="DialogBaseTheme" parent="android:style/Theme.Dialog"/>
+
+    <style name="DialogTheme" parent="@style/DialogBaseTheme">
+        <item name="android:windowBackground">@android:color/transparent</item>
+        <item name="android:windowAnimationStyle">@style/DialogAnimation</item>
+        <item name="android:windowMinWidthMajor">35.000004%</item>
+        <item name="android:windowMinWidthMinor">29.999996%</item>
+    </style>
+
+    <style name="LicenseContent">
+        <item name="android:textSize">14.0sp</item>
+        <item name="android:layout_marginLeft">16.0dip</item>
+        <item name="android:layout_marginRight">16.0dip</item>
+        <item name="android:layout_marginBottom">8.0dip</item>
+    </style>
+
+    <style name="LicenseTitle">
+        <item name="android:textSize">18.0sp</item>
+        <item name="android:layout_marginLeft">16.0dip</item>
+        <item name="android:layout_marginTop">16.0dip</item>
+        <item name="android:layout_marginRight">16.0dip</item>
+        <item name="android:layout_marginBottom">8.0dip</item>
+        <item name="android:fontFamily">sans-serif-light</item>
+    </style>
+
+    <style name="OnOffTextAppearance" parent="android:style/TextAppearance">
+        <item name="android:textColor">#ffffffff</item>
+    </style>
+
+    <style name="PurchaseDialogTheme" parent="android:style/Theme.Holo.Light.Dialog">
+        <item name="android:windowBackground">@android:color/transparent</item>
+    </style>
+
+    <style name="SetTimeContainerStyle">
+        <item name="android:layout_weight">1.5</item>
+    </style>
+
+    <style name="SyncProgress" parent="android:style/Widget.Holo.ProgressBar">
+        <item name="android:layout_alignParentBottom">true</item>
+        <item name="android:layout_centerHorizontal">true</item>
+    </style>
+
+    <style name="WeekdaySelectorItem" parent="android:style/Widget.Holo.TextView">
+        <item name="android:textSize">16.0sp</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:textColor">#ffffffff</item>
+        <item name="android:gravity">center</item>
+        <item name="android:background">@drawable/tab_button</item>
+        <item name="android:paddingTop">20.0dip</item>
+        <item name="android:paddingBottom">20.0dip</item>
+        <item name="android:clickable">true</item>
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_weight">1.0</item>
+    </style>
+
+    <style name="Widget.Holo.CompoundButton.Switch" parent="android:style/Widget.CompoundButton">
+        <item name="android:thumb">@drawable/onoff_thumb_selector</item>
+        <item name="android:track">@drawable/onoff_background_blue</item>
+        <item name="android:textOn">@string/switch_on</item>
+        <item name="android:textOff">@string/switch_off</item>
+        <item name="android:thumbTextPadding">12.0dip</item>
+        <item name="android:switchTextAppearance">@style/OnOffTextAppearance</item>
+        <item name="android:switchMinWidth">105.0dip</item>
+        <item name="android:switchPadding">0.0dip</item>
+    </style>
+
+    <style name="dialpad">
+        <item name="android:textSize">30.0sp</item>
+        <item name="android:textAllCaps">true</item>
+    </style>
+
+    <style name="dialpad_ampm" parent="@style/dialpad">
+        <item name="android:textSize">30.0sp</item>
+    </style>
+
+    <style name="label">
+        <item name="android:textSize">22.0dip</item>
+        <item name="android:textAllCaps">true</item>
+    </style>
+
+    <style name="medium_bold">
+        <item name="android:textSize">60.0dip</item>
+    </style>
+
+    <style name="medium_light">
+        <item name="android:textSize">60.0dip</item>
+    </style>
+
+    <style name="textStyle" parent="android:TextAppearance">
+        <item name="android:fontFamily">sans-serif-thin</item>
+    </style>
+
+    <style name="textStyle.Large">
+        <item name="android:textSize">30sp</item>
+        <item name="android:background">@drawable/bg_translucent_gray</item>
+        <item name="android:paddingLeft">10dp</item>
+        <item name="android:paddingRight">10dp</item>
+    </style>
+
+    <style name="textStyle.ruler">
+        <item name="android:color">#44ffffff</item>
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:textSize">10sp</item>
+    </style>
+
+    <style name="rulerLine">
+        <item name="android:layout_width">7dp</item>
+        <item name="android:layout_height">2dp</item>
+        <item name="android:layout_marginRight">3dp</item>
+        <item name="android:layout_marginTop">8dp</item>
+        <item name="android:layout_marginBottom">8dp</item>
+        <item name="android:background">@color/separator_background</item>
+    </style>
+
+    <style name="rulerContainer">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:gravity">center_vertical</item>
+        <item name="android:minHeight">22.5dp</item>
+    </style>
+</resources>

@@ -1,0 +1,15 @@
+<!-- Generated template screen file. Fill the id tags below with content
+with which to populate your previewed layout. For help with sample
+data, please see http://jimulabs.com/sample-data-specifications/ -->
+<screen>
+    <_content layout="@layout/list">
+        <textView>Hello</textView>
+        <listView>
+            <items>
+                <_item layout="@android:layout/simple_list_item_1" count="31">
+                    <text1>sample item</text1>
+                </_item>
+            </items>
+        </listView>
+    </_content>
+</screen>

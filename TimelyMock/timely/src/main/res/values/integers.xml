@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <integer name="broadcast_port">33857</integer>
+    <integer name="config_activityDefaultDur">293</integer>
+    <integer name="config_activityShortDur">200</integer>
+    <integer name="device_class">1</integer>
+    <integer name="ga_dispatchPeriod">-1</integer>
+    <integer name="tablet_alarm_container_weight_sum">3</integer>
+</resources>

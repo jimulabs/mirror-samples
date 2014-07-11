@@ -1,0 +1,16 @@
+<screen script="js/add_alarm.js">
+    <_content layout="fragment_add_alarm">
+    <!--Generated screen file for fragment_add_alarm.xml-->
+    <!--  You can set properties (such as text and image) of a view in the above layout. 
+          For example:
+            <textView1>Hello World</textView1>
+            <imageView1 src="ic_launcher"/>
+            <listView1>
+               <_item layout="@android:layout/simple_list_item1">
+                  <text1>Some Text</text1>
+               </_item>
+            </listView>
+    -->
+        <time>10:30</time>
+    </_content>
+</screen>

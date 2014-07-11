@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <item type="drawable" name="dark_background">#40000000</item>
+    <item type="drawable" name="expand_button_background_focused">#ffececec</item>
+    <item type="drawable" name="expand_button_background_pressed">#ffc2c2c2</item>
+    <item type="drawable" name="press_background">#33ffffff</item>
+    <item type="drawable" name="press_background_darker">#19ffffff</item>
+    <item type="drawable" name="press_background_light">#1affffff</item>
+    <item type="drawable" name="press_background_stronger">#99ffffff</item>
+    <item type="drawable" name="stopwatch_button_press_background">#11000000</item>
+    <item type="drawable" name="theme_pack_background_color">#22ffffff</item>
+    <item type="drawable" name="welcomeDivider">#16cccccc</item>
+    <item type="drawable" name="welcomeDividerTop">#24cccccc</item>
+</resources>

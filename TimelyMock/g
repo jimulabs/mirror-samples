@@ -1,0 +1,3 @@
+#!/usr/local/bin/zsh
+git stash
+git co $1

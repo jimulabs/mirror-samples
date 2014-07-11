@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              android:id="@+id/ruler"
+              android:orientation="vertical"
+              android:layout_marginTop="50dp"
+              android:layout_width="wrap_content"
+              android:minWidth="100dp"
+              android:layout_height="match_parent">
+
+    <LinearLayout style="@style/rulerContainer">
+        <View style="@style/rulerLine" android:id="@+id/rulerLine"/>
+        <TextView android:text="0" style="@style/textStyle.ruler" android:id="@+id/rulerText"/>
+    </LinearLayout>
+    <LinearLayout style="@style/rulerContainer">
+        <View style="@style/rulerLine" android:id="@+id/rulerLine"/>
+        <TextView android:text="1" style="@style/textStyle.ruler" android:id="@+id/rulerText"/>
+    </LinearLayout>
+    <LinearLayout style="@style/rulerContainer">
+        <View style="@style/rulerLine" android:id="@+id/rulerLine"/>
+        <TextView android:text="2" style="@style/textStyle.ruler" android:id="@+id/rulerText"/>
+    </LinearLayout>
+    <LinearLayout style="@style/rulerContainer">
+        <View style="@style/rulerLine" android:id="@+id/rulerLine"/>
+        <TextView android:text="3" style="@style/textStyle.ruler" android:id="@+id/rulerText"/>
+    </LinearLayout>
+    <LinearLayout style="@style/rulerContainer">
+        <View style="@style/rulerLine" android:id="@+id/rulerLine"/>
+        <TextView android:text="4" style="@style/textStyle.ruler" android:id="@+id/rulerText"/>
+    </LinearLayout>
+    <LinearLayout style="@style/rulerContainer">
+        <View style="@style/rulerLine" android:id="@+id/rulerLine"/>
+        <TextView android:text="5" style="@style/textStyle.ruler" android:id="@+id/rulerText"/>
+    </LinearLayout>
+
+    <LinearLayout style="@style/rulerContainer">
+        <View style="@style/rulerLine" android:id="@+id/rulerLine"/>
+        <TextView android:text="6" style="@style/textStyle.ruler" android:id="@+id/rulerText"/>
+    </LinearLayout>
+    <LinearLayout style="@style/rulerContainer">
+        <View style="@style/rulerLine" android:id="@+id/rulerLine"/>
+        <TextView android:text="7" style="@style/textStyle.ruler" android:id="@+id/rulerText"/>
+    </LinearLayout>
+    <LinearLayout style="@style/rulerContainer">
+        <View style="@style/rulerLine" android:id="@+id/rulerLine"/>
+        <TextView android:text="8" style="@style/textStyle.ruler" android:id="@+id/rulerText"/>
+    </LinearLayout>
+    <LinearLayout style="@style/rulerContainer">
+        <View style="@style/rulerLine" android:id="@+id/rulerLine"/>
+        <TextView android:text="9" style="@style/textStyle.ruler" android:id="@+id/rulerText"/>
+    </LinearLayout>
+    <LinearLayout style="@style/rulerContainer">
+        <View style="@style/rulerLine" android:id="@+id/rulerLine"/>
+        <TextView android:text="10" style="@style/textStyle.ruler" android:id="@+id/rulerText"/>
+    </LinearLayout>
+    <LinearLayout style="@style/rulerContainer">
+        <View style="@style/rulerLine" android:id="@+id/rulerLine"/>
+        <TextView android:text="11" style="@style/textStyle.ruler" android:id="@+id/rulerText"/>
+    </LinearLayout>
+
+    <LinearLayout style="@style/rulerContainer">
+        <View style="@style/rulerLine" android:id="@+id/rulerLine"/>
+        <TextView android:text="12" style="@style/textStyle.ruler" android:id="@+id/rulerText"/>
+    </LinearLayout>
+    <LinearLayout style="@style/rulerContainer">
+        <View style="@style/rulerLine" android:id="@+id/rulerLine"/>
+        <TextView android:text="13" style="@style/textStyle.ruler" android:id="@+id/rulerText"/>
+    </LinearLayout>
+    <LinearLayout style="@style/rulerContainer">
+        <View style="@style/rulerLine" android:id="@+id/rulerLine"/>
+        <TextView android:text="14" style="@style/textStyle.ruler" android:id="@+id/rulerText"/>
+    </LinearLayout>
+    <LinearLayout style="@style/rulerContainer">
+        <View style="@style/rulerLine" android:id="@+id/rulerLine"/>
+        <TextView android:text="15" style="@style/textStyle.ruler" android:id="@+id/rulerText"/>
+    </LinearLayout>
+    <LinearLayout style="@style/rulerContainer">
+        <View style="@style/rulerLine" android:id="@+id/rulerLine"/>
+        <TextView android:text="16" style="@style/textStyle.ruler" android:id="@+id/rulerText"/>
+    </LinearLayout>
+    <LinearLayout style="@style/rulerContainer">
+        <View style="@style/rulerLine" android:id="@+id/rulerLine"/>
+        <TextView android:text="17" style="@style/textStyle.ruler" android:id="@+id/rulerText"/>
+    </LinearLayout>
+
+    <LinearLayout style="@style/rulerContainer">
+        <View style="@style/rulerLine" android:id="@+id/rulerLine"/>
+        <TextView android:text="18" style="@style/textStyle.ruler" android:id="@+id/rulerText"/>
+    </LinearLayout>
+    <LinearLayout style="@style/rulerContainer">
+        <View style="@style/rulerLine" android:id="@+id/rulerLine"/>
+        <TextView android:text="19" style="@style/textStyle.ruler" android:id="@+id/rulerText"/>
+    </LinearLayout>
+    <LinearLayout style="@style/rulerContainer">
+        <View style="@style/rulerLine" android:id="@+id/rulerLine"/>
+        <TextView android:text="20" style="@style/textStyle.ruler" android:id="@+id/rulerText"/>
+    </LinearLayout>
+    <LinearLayout style="@style/rulerContainer">
+        <View style="@style/rulerLine" android:id="@+id/rulerLine"/>
+        <TextView android:text="21" style="@style/textStyle.ruler" android:id="@+id/rulerText"/>
+    </LinearLayout>
+    <LinearLayout style="@style/rulerContainer">
+        <View style="@style/rulerLine" android:id="@+id/rulerLine"/>
+        <TextView android:text="22" style="@style/textStyle.ruler" android:id="@+id/rulerText"/>
+    </LinearLayout>
+    <LinearLayout style="@style/rulerContainer">
+        <View style="@style/rulerLine" android:id="@+id/rulerLine"/>
+        <TextView android:text="23" style="@style/textStyle.ruler" android:id="@+id/rulerText"/>
+    </LinearLayout>
+
+</LinearLayout>

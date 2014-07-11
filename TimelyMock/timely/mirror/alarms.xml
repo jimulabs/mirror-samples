@@ -1,0 +1,36 @@
+<items layout="@layout/alarm_list_item"  xmlns:m="http://jimulabs.com/schemas/mirror">
+    <_item>
+        <time>3:30</time>
+    </_item>
+    <_item>
+        <time>6:30</time>
+        <timeSwitch checked="true" />
+    </_item>
+    <_item>
+        <time>8:30</time>
+    </_item>
+    <_item>
+        <time>9:30</time>
+    </_item>
+    <_item>
+        <time>10:00</time>
+    </_item>
+    <_item>
+        <time m:href="fragment_add_alarm.xml" m:target="_blank"
+              m:animEnter="@android:anim/fade_in"
+              m:animExit="@android:anim/fade_out"
+              m:event="click">10:30</time>
+    </_item>
+    <_item>
+        <time>11:00</time>
+    </_item>
+    <_item>
+        <time>11:30</time>
+    </_item>
+    <_item>
+        <time>12:30</time>
+    </_item>
+    <_item>
+        <time>19:30</time>
+    </_item>
+</items>

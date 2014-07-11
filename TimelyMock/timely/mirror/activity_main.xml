@@ -1,0 +1,22 @@
+<screen script="js/main.js" xmlns:m="http://jimulabs.com/schemas/mirror">
+    <actionbar showTabsFor="@id/pager"/>
+    <_content layout="activity_main">
+        <pager>
+            <_page layout="@layout/fragment_alarm_list" icon="@drawable/ic_tab_alarm">
+                <alarmList m:href="fragment_add_alarm.xml" m:target="_blank"
+                    m:animEnter="@anim/dialog_enter" m:animExit="@anim/dialog_exit"
+                    m:event="bezelSwipe">
+                    <_item layout="@layout/spacer" count="1"/>
+                    <items include="alarms.xml" />
+                </alarmList>
+            </_page>
+            <_page layout="@layout/fragment_clock" icon="@drawable/ic_tab_time">
+                <hoursMinutes>22:07</hoursMinutes>
+                <seconds>15</seconds>
+                <date>Sun, February 2</date>
+            </_page>
+            <_page layout="@layout/fragment_stopwatch" icon="@drawable/ic_tab_stopwatch">
+            </_page>
+        </pager>
+    </_content>
+</screen>
