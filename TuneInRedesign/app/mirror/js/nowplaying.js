@@ -30,8 +30,20 @@ $('/').animate({
  Goal: find an easy way to define flexible transition animation between screens in JavaScript
 */
 
-$('@android:id/action_bar_overlay_layout').background = '@drawable/background_gradient'
-$('@android:id/action_bar_overlay_layout').beginDelayedTransition()
+//$('@android:id/action_bar_overlay_layout').background = '@drawable/background_gradient'
+//$('@android:id/action_bar_overlay_layout').beginDelayedTransition()
+/*
+$('/').x = 800
+$('/').alpha = 0
+$('/').animate({
+  properties: {
+    x: [800, 0],
+    alpha: [0, 1],
+    rotation: [-90, 0]
+  },
+  duration: 5000
+})
+*/
 
 var slideDownFunc = function() {
     $('@id/thumbnail').x = 50

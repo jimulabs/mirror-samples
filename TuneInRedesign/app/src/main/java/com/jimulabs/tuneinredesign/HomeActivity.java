@@ -1,12 +1,14 @@
 package com.jimulabs.tuneinredesign;
 
 import android.app.Activity;
+import android.app.ActivityOptions;
 import android.content.Intent;
 import android.os.Bundle;
 import android.os.Handler;
 import android.transition.ChangeBounds;
 import android.transition.Scene;
 import android.transition.TransitionManager;
+import android.util.Pair;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
@@ -28,18 +30,18 @@ public class HomeActivity extends Activity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.home_container);
-        mTitle = (TextView)findViewById(R.id.title);
-        mSubTitle = (TextView)findViewById(R.id.subtitle);
-        mThumbnail = (ImageView)findViewById(R.id.thumbnail);
+        mTitle = (TextView) findViewById(R.id.title);
+        mSubTitle = (TextView) findViewById(R.id.subtitle);
+        mThumbnail = (ImageView) findViewById(R.id.thumbnail);
         mTitle.setText("Populated Title");
         mSubTitle.setText("Populated subtitle");
         mThumbnail.setImageResource(R.drawable.ic_launcher);
 
 
         mNowPlaying = (ViewGroup) findViewById(R.id.nowplaying_container);
-        final Scene scene1 = Scene.getSceneForLayout(mNowPlaying, R.layout.nowplaying_mini, HomeActivity.this);
-        final Scene scene2 = Scene.getSceneForLayout(mNowPlaying, R.layout.nowplaying_fullscreen, HomeActivity.this);
-        final ChangeBounds t = new ChangeBounds();
+//        final Scene scene1 = Scene.getSceneForLayout(mNowPlaying, R.layout.nowplaying_mini, HomeActivity.this);
+//        final Scene scene2 = Scene.getSceneForLayout(mNowPlaying, R.layout.nowplaying_fullscreen, HomeActivity.this);
+//        final ChangeBounds t = new ChangeBounds();
 //        scene1.enter();
 //        new Handler().postDelayed(new Runnable() {
 //            @Override
@@ -47,16 +49,23 @@ public class HomeActivity extends Activity {
 //                TransitionManager.go(scene2, t);
 //            }
 //        }, 500);
+        mStopButton = findViewById(R.id.stop);
+
         mNowPlaying.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
 //                mCurrentScene = mCurrentScene != scene2 ? scene2 : scene1;
 //                TransitionManager.go(mCurrentScene, t);
-                TransitionManager.beginDelayedTransition(mNowPlaying);
-                mStopButton.setVisibility(View.GONE);
+//                TransitionManager.beginDelayedTransition(mNowPlaying);
+//                mStopButton.setVisibility(View.GONE);
+                Intent intent = new Intent(HomeActivity.this, NowPlayingActivity.class);
+                View view = mThumbnail;
+//                ActivityOptions options = ActivityOptions.makeSceneTransitionAnimation(HomeActivity.this,
+//                        Pair.create(view, "thumbnail"));
+                ActivityOptions options = ActivityOptions.makeCustomAnimation(HomeActivity.this, R.anim.slide_up_in, R.anim.slide_up_out);
+                startActivity(intent, options.toBundle());
             }
         });
-        mStopButton = findViewById(R.id.stop);
         mStopButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
