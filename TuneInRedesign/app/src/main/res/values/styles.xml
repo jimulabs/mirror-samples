@@ -1,7 +1,7 @@
 <resources>
 
     <!-- Base application theme. -->
-    <style name="AppTheme" parent="android:Theme.Holo.Light.DarkActionBar">
+    <style name="AppTheme" parent="android:Theme.Holo.Light">
         <item name="android:windowBackground">@android:color/white</item>
         <item name="android:actionBarStyle">@style/LightActionBar</item>
         <item name="android:actionBarTabStyle">@style/LightActionBarTab</item>
