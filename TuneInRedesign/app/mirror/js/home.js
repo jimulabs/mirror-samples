@@ -29,9 +29,7 @@ var openNowPlaying = function() {
     openScreen('../now_playing.xml', '@anim/slide_up_in', '@anim/slide_up_out')
 */
 
-    openScreen('../now_playing.xml',
-        '@anim/slide_up_in', null,
-        null, '@anim/slide_down_out')
+    openScreen('../now_playing.xml')
 
 }
 $('@id/thumbnail').on('click', openNowPlaying)

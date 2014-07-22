@@ -46,42 +46,33 @@
         android:text="Medium Text"
         android:textAppearance="?android:attr/textAppearanceMedium" />
 
-    <LinearLayout
-        android:id="@+id/button_container"
-        android:layout_width="match_parent"
+    <ImageButton
+        android:id="@+id/repeat"
+        style="@android:style/Widget.Holo.Button.Borderless"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@id/time">
+        android:layout_toLeftOf="@+id/pause"
+        android:layout_alignParentBottom="true"
+        android:src="@drawable/ic_repeat" />
 
-        <ImageButton
-            android:id="@+id/repeat"
-            style="@android:style/Widget.Holo.Button.Borderless"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_alignParentLeft="true"
-            android:layout_below="@id/time"
-            android:layout_weight="1"
-            android:src="@drawable/ic_repeat" />
+    <ImageButton
+        android:id="@+id/pause"
+        style="@android:style/Widget.Holo.Button.Borderless"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:paddingLeft="50dp"
+        android:paddingRight="60dp"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:src="@drawable/ic_pause" />
 
-        <ImageButton
-            android:id="@+id/pause"
-            style="@android:style/Widget.Holo.Button.Borderless"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_below="@id/time"
-            android:layout_centerHorizontal="true"
-            android:layout_toRightOf="@id/repeat"
-            android:layout_weight="1"
-            android:src="@drawable/ic_pause" />
-
-        <ImageButton
-            android:id="@+id/stop"
-            style="@android:style/Widget.Holo.Button.Borderless"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_below="@id/time"
-            android:layout_centerHorizontal="true"
-            android:layout_toRightOf="@id/pause"
-            android:layout_weight="1"
-            android:src="@drawable/ic_stop" />
-    </LinearLayout>
+    <ImageButton
+        android:id="@+id/stop"
+        style="@android:style/Widget.Holo.Button.Borderless"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_toRightOf="@id/pause"
+        android:src="@drawable/ic_stop" />
 </RelativeLayout>

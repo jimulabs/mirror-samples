@@ -1,76 +1,56 @@
-/*
-var nowPlaying = $('@id/nowplaying_container')
+var duration = 400
 
-$.openScreen('now_playing.xml', {
-    viewToAnimate: nowPlaying,
-    transition: {
-        scenes: ['@layout/nowplaying_mini', '@layout/nowplaying_fullscreen'],
-        type: 'changeBounds'
-    }
+function makeAnim(props) {
+  return {
+    properties: props,
+    duration: duration,
+    interpolator: '@android:interpolator/accelerate_decelerate'
+  }
+}
+
+var rootY = [0, $('/').height - 180]
+var actionbarAlpha = [1, 0]
+var contentY = [$('#content').y, 0]
+
+var repeatY = [$('@id/repeat').y, 0]
+var repeatX = [$('@id/repeat').x, 315]
+var pauseY = [$('@id/pause').y, 0]
+var pauseX = [$('@id/pause').x, 444]
+var stopY = [$('@id/stop').y, 0]
+var stopX = [$('@id/stop').x, 571]
+var thumbnailY = [$('@id/thumbnail').y, -215]
+var thumbnailX = [$('@id/thumbnail').x, -200]
+var thumbnailScale = [1, 0.16]
+
+
+$('/').y = rootY[1]
+$('#content').y = contentY[1]
+$('#actionbar').alpha = actionbarAlpha[1]
+$('@id/repeat').y = repeatY[1]
+$('@id/repeat').x = repeatX[1]
+$('@id/pause').y = pauseY[1]
+$('@id/pause').x = pauseX[1]
+$('@id/stop').y = stopY[1]
+$('@id/stop').x = stopX[1]
+$('@id/thumbnail').y = thumbnailY[1]
+$('@id/thumbnail').x = thumbnailX[1]
+$('@id/thumbnail').scale = thumbnailScale[1]
+
+function playAnims(index) {
+    $('@id/repeat').animate(makeAnim({x: repeatX[index], y: repeatY[index]}))
+    $('@id/pause').animate(makeAnim({x: pauseX[index], y: pauseY[index]}))
+    $('@id/stop').animate(makeAnim({x: stopX[index], y: stopY[index]}))
+    $('@id/thumbnail').animate(makeAnim({x: thumbnailX[index], y: thumbnailY[index], scale: thumbnailScale[index]}))
+
+    $('/').animate(makeAnim({y: rootY[index]}))
+    $('#content').animate(makeAnim({y: contentY[index]}))
+    $('#actionbar').animate(makeAnim({alpha: actionbarAlpha[index]}))
+}
+
+
+playAnims(0)
+
+$('@android:id/home').parent.on("click", function() {
+    playAnims(1)
 })
 
-nowPlaying.animateByTransition({
-    scenes: ['@layout/nowplaying_mini', '@layout/nowplaying_fullscreen'],
-    type: 'changeBounds'
-})
-*/
-
-/*
-$('/').animate({
-    properties: {
-        scale: [2, 1],
-        y: [0, 500]
-    },
-    interpolator: '@android:interpolator/bounce',
-    duration: 1000
-})
-*/
-
-/*
- Goal: find an easy way to define flexible transition animation between screens in JavaScript
-*/
-
-//$('@android:id/action_bar_overlay_layout').background = '@drawable/background_gradient'
-//$('@android:id/action_bar_overlay_layout').beginDelayedTransition()
-/*
-$('/').x = 800
-$('/').alpha = 0
-$('/').animate({
-  properties: {
-    x: [800, 0],
-    alpha: [0, 1],
-    rotation: [-90, 0]
-  },
-  duration: 5000
-})
-*/
-
-var slideDownFunc = function() {
-    $('@id/thumbnail').x = 50
-    $('@id/thumbnail').y = 500
-
-                        /*
-                        $('@id/nowplaying_container').animateByTransition({
-                            scenes: ['@layout/nowplaying_fullscreen', '@layout/nowplaying_mini'],
-                            transitions: ['changeBounds']
-                        })
-                        */
-                        /*
-                        $('/').animate({
-                            properties: {
-                                y: [0, 500]
-                            },
-                            interpolator: '@android:interpolator/deaccelerate',
-                            duration: duration
-                        })
-                        $('@android:id/action_bar_container').animate({
-                            properties: {
-                                scaleY: [1, 0]
-                            },
-                            duration: duration
-                        })
-                        */
-                    }
-//slideDownFunc()
-
-$('@android:id/home').parent.on("click", slideDownFunc)

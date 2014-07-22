@@ -14,14 +14,14 @@
         android:id="@+id/thumbnail"
         android:layout_width="50dp"
         android:layout_height="50dp"
-        android:padding="5dp"/>
+        android:padding="5dp" />
 
 
     <LinearLayout
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_centerVertical="true"
-        android:layout_toLeftOf="@+id/button_container"
+        android:layout_toLeftOf="@+id/repeat"
         android:layout_toRightOf="@id/thumbnail"
         android:orientation="vertical">
 
@@ -49,37 +49,30 @@
             android:textSize="10sp" />
     </LinearLayout>
 
-    <LinearLayout
-        android:id="@+id/button_container"
+    <ImageButton
+        android:id="@+id/repeat"
+        style="@android:style/Widget.Holo.Button.Borderless"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignParentRight="true">
+        android:layout_centerVertical="true"
+        android:layout_toLeftOf="@+id/pause"
+        android:src="@drawable/ic_repeat" />
 
-        <ImageButton
-            android:id="@+id/repeat"
-            style="@android:style/Widget.Holo.Button.Borderless"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_centerVertical="true"
-            android:layout_toLeftOf="@+id/pause"
-            android:src="@drawable/ic_repeat" />
+    <ImageButton
+        android:id="@+id/pause"
+        style="@android:style/Widget.Holo.Button.Borderless"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerVertical="true"
+        android:layout_toLeftOf="@+id/stop"
+        android:src="@drawable/ic_pause" />
 
-        <ImageButton
-            android:id="@+id/pause"
-            style="@android:style/Widget.Holo.Button.Borderless"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_centerVertical="true"
-            android:layout_toLeftOf="@+id/stop"
-            android:src="@drawable/ic_pause" />
-
-        <ImageButton
-            android:id="@+id/stop"
-            style="@android:style/Widget.Holo.Button.Borderless"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_alignParentRight="true"
-            android:layout_centerVertical="true"
-            android:src="@drawable/ic_stop" />
-    </LinearLayout>
+    <ImageButton
+        android:id="@+id/stop"
+        style="@android:style/Widget.Holo.Button.Borderless"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="true"
+        android:layout_centerVertical="true"
+        android:src="@drawable/ic_stop" />
 </RelativeLayout>
