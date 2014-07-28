@@ -1,4 +1,4 @@
-var duration = 400
+var duration = 500
 
 function makeAnim(props) {
   return {
@@ -12,45 +12,34 @@ var rootY = [0, $('/').height - 180]
 var actionbarAlpha = [1, 0]
 var contentY = [$('#content').y, 0]
 
-var repeatY = [$('@id/repeat').y, 0]
-var repeatX = [$('@id/repeat').x, 315]
-var pauseY = [$('@id/pause').y, 0]
-var pauseX = [$('@id/pause').x, 444]
-var stopY = [$('@id/stop').y, 0]
-var stopX = [$('@id/stop').x, 571]
-var thumbnailY = [$('@id/thumbnail').y, -215]
-var thumbnailX = [$('@id/thumbnail').x, -200]
-var thumbnailScale = [1, 0.16]
-
-
-$('/').y = rootY[1]
-$('#content').y = contentY[1]
-$('#actionbar').alpha = actionbarAlpha[1]
-$('@id/repeat').y = repeatY[1]
-$('@id/repeat').x = repeatX[1]
-$('@id/pause').y = pauseY[1]
-$('@id/pause').x = pauseX[1]
-$('@id/stop').y = stopY[1]
-$('@id/stop').x = stopX[1]
-$('@id/thumbnail').y = thumbnailY[1]
-$('@id/thumbnail').x = thumbnailX[1]
-$('@id/thumbnail').scale = thumbnailScale[1]
-
 function playAnims(index) {
-    $('@id/repeat').animate(makeAnim({x: repeatX[index], y: repeatY[index]}))
-    $('@id/pause').animate(makeAnim({x: pauseX[index], y: pauseY[index]}))
-    $('@id/stop').animate(makeAnim({x: stopX[index], y: stopY[index]}))
-    $('@id/thumbnail').animate(makeAnim({x: thumbnailX[index], y: thumbnailY[index], scale: thumbnailScale[index]}))
-
-    $('/').animate(makeAnim({y: rootY[index]}))
-    $('#content').animate(makeAnim({y: contentY[index]}))
-    $('#actionbar').animate(makeAnim({alpha: actionbarAlpha[index]}))
+    var from = index==0 ? 1 : 0
+    var to = index==0 ? 0 : 1
+    var root = $('/').animate(makeAnim({y: [rootY[from], rootY[to]]}))
+    var content = $('#content').animate(makeAnim({y: [contentY[from], contentY[to]]}))
+    var ab = $('#actionbar').animate(makeAnim({alpha: [actionbarAlpha[from], actionbarAlpha[to]]}))
+    var window = together([root,content,ab])
+    $('time').alpha = 0
+    $('title').alpha = 0
+    $('subtitle').alpha = 0
+    var time = $('time').animate({properties: {alpha: [0,1]}})
+    var title = $('title').animate({properties: {alpha: [0,1]}})
+    var subtitle = $('subtitle').animate({properties: {alpha: [0,1]}})
+    var labels = together([title, subtitle, time])
+    sequence([window, labels]).start()
 }
-
 
 playAnims(0)
 
-$('@android:id/home').parent.on("click", function() {
-    playAnims(1)
-})
+/*
+var absX = $('thumbnail').absX
+var absY = $('thumbnail').absY
+var t = $('@id/thumbnail').animate({properties: {scale:[0.2, 1], absX:absX, absY:absY}})
+var s = $('@id/title').animate({properties: {textSize:[1, 80]}})
+together([t,s]).start()
+*/
 
+$('@android:id/home').parent.on('click', function() {
+    playAnims(1)
+    closeThisScreen()
+})

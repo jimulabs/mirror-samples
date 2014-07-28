@@ -10,7 +10,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="20dp"
-            android:id="@+id/thumbnail"/>
+            android:id="@+id/logo"/>
 
     <TextView
             android:layout_width="wrap_content"
