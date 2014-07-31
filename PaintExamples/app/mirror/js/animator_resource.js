@@ -1,0 +1,1 @@
+$('@id/textView1').animate('@animator/slide_up_appear').start()

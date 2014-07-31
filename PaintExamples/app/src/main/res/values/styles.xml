@@ -1,0 +1,23 @@
+<resources>
+
+    <!-- Base application theme. -->
+    <style name="AppTheme" parent="android:Theme.Holo.Light.DarkActionBar">
+        <!-- Customize your theme here. -->
+    </style>
+
+    <style name="basicShape">
+        <item name="android:layout_margin">10dp</item>
+        <item name="android:scaleType">fitXY</item>
+        <item name="android:layout_width">60dp</item>
+        <item name="android:layout_height">60dp</item>
+    </style>
+
+    <style name="circle" parent="basicShape">
+        <item name="android:src">@drawable/circle</item>
+    </style>
+
+    <style name="square" parent="basicShape">
+        <item name="android:src">@drawable/square</item>
+    </style>
+
+</resources>
