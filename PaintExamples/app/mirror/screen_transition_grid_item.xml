@@ -1,8 +1,8 @@
 <!-- Generated template screen file. Fill the id tags below with content
 with which to populate your previewed layout. For help with sample
 data, please see http://jimulabs.com/sample-data-specifications/ -->
-<screen script="js/listener.js">
-    <_content layout="@layout/one_text_view">
-        <textView1>Click me!</textView1>
+<screen>
+    <_content layout="@layout/screen_transition_grid_item">
+        <thumbnail></thumbnail>
     </_content>
 </screen>

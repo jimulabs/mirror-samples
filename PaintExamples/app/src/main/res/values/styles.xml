@@ -5,6 +5,17 @@
         <!-- Customize your theme here. -->
     </style>
 
+    <style name="TransparentTheme" parent="android:Theme.Holo.Light.NoActionBar">
+        <item name="android:windowIsTranslucent">true</item>
+        <item name="android:windowBackground">@android:color/transparent</item>
+        <item name="android:actionBarStyle">@style/ActionBar</item>
+        <item name="android:windowActionBarOverlay">true</item>
+    </style>
+
+    <style name="ActionBar" parent="android:Widget.Holo.ActionBar">
+        <item name="android:background">@android:color/transparent</item>
+    </style>
+
     <style name="basicShape">
         <item name="android:layout_margin">10dp</item>
         <item name="android:scaleType">fitXY</item>

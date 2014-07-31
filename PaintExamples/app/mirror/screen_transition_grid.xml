@@ -1,0 +1,29 @@
+<!-- Generated template screen file. Fill the id tags below with content
+with which to populate your previewed layout. For help with sample
+data, please see http://jimulabs.com/sample-data-specifications/ -->
+<screen script="js/screen_transition_grid.js">
+    <_content layout="@layout/screen_transition_grid">
+        <grid>
+            <items layout="@layout/screen_transition_grid_item">
+                <_item>
+                    <thumbnail src="images/kodaline.jpg"/>
+                </_item>
+                <_item>
+                    <thumbnail src="images/christina.jpg"/>
+                </_item>
+                <_item>
+                    <thumbnail src="images/foster.jpg"/>
+                </_item>
+                <_item>
+                    <thumbnail src="images/keane.jpg"/>
+                </_item>
+                <_item>
+                    <thumbnail src="images/pinkrobots.jpg"/>
+                </_item>
+                <_item>
+                    <thumbnail src="images/ellie.jpg"/>
+                </_item>
+            </items>
+        </grid>
+    </_content>
+</screen>
