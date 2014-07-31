@@ -6,10 +6,17 @@ $('fab').scale = 0
 $('title_container').height = 0
 $('info_container').height = 0
 
+// the following two lines won't be needed after shared view animation is properly implemented
+$('title_container').alpha = 0
+$('info_container').alpha = 0
 
 var heightAnim = function(oldHeight) {
                     return {
-                       properties: { height: [0, oldHeight] }
+                       properties: {
+                         height: [0, oldHeight],
+                         alpha: [0, 1]
+                       },
+                       duration: 200
                     }
                  }
 var tc = $('title_container').animate(heightAnim(tcHeight))
@@ -38,5 +45,5 @@ var fab = $('fab').animate({
 })
 
 customizeScreenOpeningAnimation(function(anim) {
-    return sequence([anim, tcic_alphas, fab])
+    return sequence([anim, together([tcic_alphas, delay(fab, 100)])]) // `anim => [tcic_alpha, 100=>fab]`
 })
