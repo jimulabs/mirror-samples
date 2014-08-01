@@ -2,6 +2,6 @@
 with which to populate your previewed layout. For help with sample
 data, please see http://jimulabs.com/sample-data-specifications/ -->
 <screen script="js/animation_choreography.js">
-    <_content layout="@layout/two_text_views">
+    <_content layout="@layout/two_views">
     </_content>
 </screen>
