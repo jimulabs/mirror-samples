@@ -44,6 +44,11 @@ var fab = $('fab').animate({
     properties: { scale: [0, 1] }
 })
 
+var tcic_fab = together([tcic_alphas, delay(fab, 100)])
 customizeScreenOpeningAnimation(function(anim) {
-    return sequence([anim, together([tcic_alphas, delay(fab, 100)])]) // `anim => [tcic_alpha, 100=>fab]`
+    return sequence([anim, tcic_fab]) // `anim => [tcic_alpha, 100 => fab]`
+})
+
+customizeScreenClosingAnimation(function(anim) {
+    return null
 })

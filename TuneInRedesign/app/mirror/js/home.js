@@ -35,7 +35,7 @@ var openNowPlaying = function() {
 
 //    openScreen('../now_playing.xml', {properties: { rotation:[0, 90], alpha:[0,1] }})
 
-    openScreen('../now_playing.xml', ['thumbnail', 'repeat', 'pause', 'stop'])//, '@android:animator/fade_in', '@android:animator/fade_out', null, null)
+    openScreen('../now_playing.xml', ['thumbnail', 'title', 'subtitle', 'repeat', 'pause', 'stop'])//, '@android:animator/fade_in', '@android:animator/fade_out', null, null)
 
 }
 $('@id/thumbnail').on('click', openNowPlaying)
