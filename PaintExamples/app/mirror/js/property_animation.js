@@ -1,4 +1,4 @@
-$('@id/textView1').animate({
+$('@id/textView1').animator({
     properties: {
         rotation: [0, 360],
         scale: [0.5, 1]

@@ -19,9 +19,9 @@ var heightAnim = function(oldHeight) {
                        duration: 200
                     }
                  }
-var tc = $('title_container').animate(heightAnim(tcHeight))
-var icHeight = $('info_container').animate(heightAnim(infoHeight))
-var icY = $('info_container').animate({
+var tc = $('title_container').animator(heightAnim(tcHeight))
+var icHeight = $('info_container').animator(heightAnim(infoHeight))
+var icY = $('info_container').animator({
     properties: { y: [$('title_container').y, infoY]}
 })
 var ic = together([icHeight, icY])
@@ -32,7 +32,7 @@ var alphas = undefined
 for (i=0; i<idsToAnimateAlpha.length; i++) {
     var view = $(idsToAnimateAlpha[i])
     view.alpha = 0
-    var a = view.animate({
+    var a = view.animator({
         properties: { alpha: [0, 1] }
     })
     alphas = alphas==undefined ? a : together([alphas, a])
@@ -40,7 +40,7 @@ for (i=0; i<idsToAnimateAlpha.length; i++) {
 
 var tcic_alphas = together([tcic, delay(alphas, 200)])
 
-var fab = $('fab').animate({
+var fab = $('fab').animator({
     properties: { scale: [0, 1] }
 })
 

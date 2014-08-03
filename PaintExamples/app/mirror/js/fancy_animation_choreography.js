@@ -9,14 +9,14 @@ var c1y = $('c1').y
 
 // set up animations for circles
 
-var moveC1 = $('c1').animate({
+var moveC1 = $('c1').animator({
     properties: {
         x: [c1x, c1x + 300],
         y: [c1y, c1y - 180]
     },
     duration: 500
 })
-var scaleC1 = $('c1').animate({
+var scaleC1 = $('c1').animator({
     properties: { scale: [1, 8.2] }
 })
 var c1 = together([moveC1, delay(scaleC1, 200)])
@@ -28,9 +28,9 @@ var shrinkCircle = {
     }
 }
 var cDelay = 100
-var shrinkC2 = $('c2').animate(shrinkCircle)
-var shrinkC3 = delay($('c3').animate(shrinkCircle), cDelay)
-var shrinkC4 = delay($('c4').animate(shrinkCircle), cDelay*2)
+var shrinkC2 = $('c2').animator(shrinkCircle)
+var shrinkC3 = delay($('c3').animator(shrinkCircle), cDelay)
+var shrinkC4 = delay($('c4').animator(shrinkCircle), cDelay*2)
 
 var c234 = together([shrinkC2, shrinkC3, shrinkC4])
 var c1234 = together([c1, c234])
@@ -46,7 +46,7 @@ var showSquare = {
 }
 var s1234 = undefined
 for (i=1; i<5; i++) {
-    var moveS = $('s'+i).animate(showSquare)
+    var moveS = $('s'+i).animator(showSquare)
     if (s1234!=undefined) {
         s1234 = together([s1234, delay(moveS, 50 * i)])
     } else {
