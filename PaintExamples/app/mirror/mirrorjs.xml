@@ -1,8 +1,8 @@
 <!-- Generated template screen file. Fill the id tags below with content
 with which to populate your previewed layout. For help with sample
 data, please see http://jimulabs.com/sample-data-specifications/ -->
-<screen script="js/mirror_plus_javascript.js">
-    <actionbar title="Mirror + JavaScript = Mirror.js?" />
-    <_content layout="@layout/mirror_plus_javascript">
+<screen script="js/mirrorjs.js">
+    <actionbar title="" />
+    <_content layout="@layout/mirrorjs">
     </_content>
 </screen>

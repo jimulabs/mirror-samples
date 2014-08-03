@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:gravity="center_horizontal"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="30dp"
+        android:layout_marginBottom="30dp"
+        android:text="&quot;Mirror.js&quot; ??"
+        android:textSize="50sp"
+        android:fontFamily="sans-serif-condensed"
+        android:textColor="#ff1d0456" />
+
+    <TextView
+        android:id="@+id/view1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Native animation in JS"
+        android:visibility="invisible"
+        android:textSize="30sp"
+        android:textColor="#ff2e048d" />
+
+    <TextView
+        android:id="@+id/view2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Native animation in JS"
+        android:visibility="invisible"
+        android:textSize="30sp"
+        android:textColor="#ff2e048d" />
+
+
+</LinearLayout>
