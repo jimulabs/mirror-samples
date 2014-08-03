@@ -16,15 +16,15 @@ $('time').alpha = 0
 function createAnimators(isClosing) {
     var from = isClosing ? 0 : 1
     var to = isClosing ? 1 : 0
-    var root = $('/').animate(makeAnim({y: [rootY[from], rootY[to]]}))
-    var content = $('#content').animate(makeAnim({y: [contentY[from], contentY[to]]}))
-    var ab = $('#actionbar').animate(makeAnim({alpha: [actionbarAlpha[from], actionbarAlpha[to]]}))
+    var root = $('/').animator(makeAnim({y: [rootY[from], rootY[to]]}))
+    var content = $('#content').animator(makeAnim({y: [contentY[from], contentY[to]]}))
+    var ab = $('#actionbar').animator(makeAnim({alpha: [actionbarAlpha[from], actionbarAlpha[to]]}))
     var window = together([root,content,ab]) // window = `[root, content, ab]`
     var labelDuration = 200
     var fromAlpha = isClosing ? 1 : 0
     var toAlpha = isClosing ? 0 : 1
     var labelAnim = {properties: {alpha: [fromAlpha, toAlpha]}, duration: labelDuration}
-    var time = $('time').animate(labelAnim)
+    var time = $('time').animator(labelAnim)
     return isClosing ? together([time, window]) : sequence([window, time]) // return `[root, content, ab] => [title, subtitle, time]`
 }
 
