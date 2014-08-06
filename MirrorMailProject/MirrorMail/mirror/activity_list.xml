@@ -1,4 +1,4 @@
-<screen>
+<screen script="js/activity_list.js">
     <actionbar title="INBOX" icon="inbox" menu="list_menu"/>
     <_content layout="activity_list">
         <mail_list>

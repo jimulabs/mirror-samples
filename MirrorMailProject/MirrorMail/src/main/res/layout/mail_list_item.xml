@@ -1,11 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
 
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                xmlns:mirrormail="http://schemas.android.com/apk/res-auto"
                 android:id="@+id/item_container"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:minHeight="@dimen/list_item_height"
-        >
+                android:paddingBottom="6dp"
+                android:minHeight="@dimen/list_item_height">
 
     <com.jimulabs.samples.mirrormail.CircularImageView
             android:id="@+id/avatar"
@@ -14,6 +15,27 @@
             android:layout_gravity="center_vertical"
             android:layout_margin="@dimen/list_avatar_margin"
             android:scaleType="center"/>
+
+    <FrameLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/tick"
+            android:layout_alignLeft="@id/avatar"
+            android:layout_alignRight="@id/avatar"
+            android:layout_alignTop="@id/avatar"
+            android:layout_alignBottom="@id/avatar"
+            android:visibility="invisible"
+            android:background="#999999">
+
+        <ImageView
+                android:id="@+id/tickImage"
+                android:layout_gravity="center"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:scaleX="2"
+                android:scaleY="2"
+                android:src="@drawable/ic_tick"/>
+    </FrameLayout>
 
     <ImageView
             android:id="@+id/flag"
