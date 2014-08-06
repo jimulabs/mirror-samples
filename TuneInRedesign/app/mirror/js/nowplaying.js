@@ -28,7 +28,7 @@ function createAnimators(isClosing) {
     return isClosing ? together([time, window]) : sequence([window, time]) // return `[root, content, ab] => [title, subtitle, time]`
 }
 
-
+/*
 customizeScreenOpeningAnimation(function(anim) {
     return together([anim, createAnimators(0)])
 })
@@ -37,6 +37,7 @@ customizeScreenOpeningAnimation(function(anim) {
 customizeScreenClosingAnimation(function(anim) {
     return together([anim, createAnimators(1)])
 })
+*/
 
 $('@android:id/home').parent.on('click', function() {
     closeThisScreen()

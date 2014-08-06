@@ -1,37 +1,23 @@
 <resources>
 
-    <!-- Base application theme. -->
-    <style name="AppTheme" parent="android:Theme.Holo.Light">
-        <item name="android:windowBackground">@android:color/white</item>
-        <item name="android:actionBarStyle">@style/LightActionBar</item>
-        <item name="android:actionBarTabStyle">@style/LightActionBarTab</item>
-        <item name="android:actionBarTabTextStyle">@style/ActionBarTabText</item>
-        <item name="android:actionBarTabBarStyle">@style/LightActionBarTabBar</item>
-    </style>
-
-    <style name="DarkTheme" parent="android:Theme.Holo">
-        <item name="android:windowIsTranslucent">false</item>
-        <item name="android:windowBackground">@drawable/background_gradient</item>
-        <item name="android:actionBarStyle">@style/DarkActionBar</item>
-        <item name="android:actionBarTabStyle">@style/DarkActionBarTab</item>
-        <item name="android:actionBarTabTextStyle">@style/ActionBarTabText</item>
-    </style>
-
-    <style name="DarkActionBar" parent="android:Widget.Holo.ActionBar">
-    </style>
-
-    <style name="DarkActionBarTab" parent="android:Widget.Holo.ActionBar.TabView">
-    </style>
-
     <style name="ActionBarTabText" parent="android:Widget.Holo.ActionBar.TabText">
         <item name="android:fontFamily">sans-serif-condensed</item>
         <item name="android:textSize">15sp</item>
-        <item name="android:textColor">@color/text_color</item>
         <item name="android:textStyle">normal</item>
     </style>
 
-    <style name="NowPlayingText">
-        <item name="android:fontFamily">sans-serif-light</item>
+
+    <!-- Light theme. -->
+    <style name="LightTheme" parent="android:Theme.Holo.Light">
+        <item name="android:windowBackground">@android:color/white</item>
+        <item name="android:actionBarStyle">@style/LightActionBar</item>
+        <item name="android:actionBarTabStyle">@style/LightActionBarTab</item>
+        <item name="android:actionBarTabTextStyle">@style/LightActionBarTabText</item>
+        <item name="android:actionBarTabBarStyle">@style/LightActionBarTabBar</item>
+    </style>
+
+    <style name="LightActionBarTabText" parent="ActionBarTabText">
+        <item name="android:textColor">@color/text_color_light</item>
     </style>
 
     <style name="LightActionBar" parent="android:Widget.ActionBar">
@@ -39,12 +25,40 @@
     </style>
 
     <style name="LightActionBarTab" parent="android:Widget.Holo.Light.ActionBar.TabView">
-        <item name="android:background">@color/accent_color</item>
+        <item name="android:background">@drawable/tab_indicator_ab_white</item>
     </style>
 
     <style name="LightActionBarTabBar" parent="android:Widget.Holo.ActionBar.TabBar">
         <item name="android:divider">@drawable/light_actionbar_divider</item>
         <item name="android:background">@color/accent_color</item>
     </style>
+
+
+    <!-- Dark theme -->
+    <style name="DarkTheme" parent="android:Theme.Holo">
+        <item name="android:windowBackground">@drawable/background_gradient</item>
+        <item name="android:actionBarStyle">@style/DarkActionBar</item>
+        <item name="android:actionBarTabStyle">@style/DarkActionBarTab</item>
+        <item name="android:actionBarTabTextStyle">@style/DarkActionBarTabText</item>
+    </style>
+
+    <style name="DarkActionBar" parent="android:Widget.Holo.ActionBar">
+        <item name="android:background">@android:color/transparent</item>
+        <item name="android:backgroundStacked">@android:color/transparent</item>
+    </style>
+
+    <style name="DarkActionBarTab" parent="android:Widget.Holo.ActionBar.TabView">
+        <item name="android:background">@drawable/tab_indicator_ab_white</item>
+    </style>
+
+    <style name="DarkActionBarTabText" parent="ActionBarTabText">
+        <item name="android:textColor">@color/text_color_dark</item>
+    </style>
+
+
+    <style name="NowPlayingText">
+        <item name="android:fontFamily">sans-serif-light</item>
+    </style>
+
 
 </resources>
