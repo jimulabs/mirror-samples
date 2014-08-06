@@ -42,11 +42,11 @@ $('@id/thumbnail').on('click', openNowPlaying)
 $('@id/title').on('click', openNowPlaying)
 $('@id/subtitle').on('click', openNowPlaying)
 
-var r = $('@id/repeat').animate({
+var r = $('@id/repeat').animator({
     properties: { rotation: [0, 90, 0], scale: [1,2], x: 300}
 })
 
-var p = $('@id/pause').animate({
+var p = $('@id/pause').animator({
     properties: { rotation: [0, 90, 0]}
 })
 

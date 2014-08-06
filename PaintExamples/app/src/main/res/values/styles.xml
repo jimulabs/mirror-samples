@@ -31,4 +31,12 @@
         <item name="android:src">@drawable/square</item>
     </style>
 
+    <style name="mirrorjsFeatureText">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:visibility">invisible</item>
+        <item name="android:textSize">23sp</item>
+        <item name="android:textColor">#ff2e048d</item>
+    </style>
+
 </resources>

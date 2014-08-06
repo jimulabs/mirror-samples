@@ -8,16 +8,14 @@ function playRipple(x, y) {
     ripple.scale = 1
     ripple.x = x - ripple.width/2
     ripple.y = y - ripple.height/2
-    ripple.animate({
+    ripple.animator({
         properties: {
             scale: 4,
             alpha: 0
         },
         duration: 601
-    });
+    }).start();
 }
-
-playRipple(200, 200)
 
 function calcTimeTextSideX(touchX) {
     var timeBar = $('@id/timeBar')
@@ -74,15 +72,16 @@ timeBarParent.on('touch',
             if (hitTimeBarWhenDown) {
                 var sideX = calcTimeTextSideX(event.x)
                 var centerX = (timeBar.width - timeText.width)/2
-                timeText.animate({
+                var textX = timeText.x
+                timeText.animator({
                     properties: {
-                        x: isUp ? centerX : sideX,
-                        scale: isUp ? 1 : 0.8
+                        x: [textX, isUp ? centerX : sideX],
+                        scale: [1, isUp ? 1 : 0.8]
                     },
                     interpolator: '@android:interpolator/decelerate_cubic',
                     duration: 350
-                });
-                if (isUp) timeBar.animate('@animator/bounce_y')
+                }).start();
+                if (isUp) timeBar.animator('@animator/bounce_y').start()
             } else if (isUp) {
                 var sign = event.y < timeBar.y ? -1 : 1
                 setTimeInMinutes(gCurrentMinutes + sign*5)

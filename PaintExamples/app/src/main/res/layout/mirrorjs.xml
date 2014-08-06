@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:gravity="center_horizontal"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="30dp"
+        android:layout_marginBottom="30dp"
+        android:text="&quot;Mirror.js&quot; ??"
+        android:textSize="50sp"
+        android:fontFamily="sans-serif-condensed"
+        android:textColor="#ff1d0456" />
+
+    <TextView
+        android:id="@+id/view1"
+        android:gravity="center"
+        android:text="Play native animations in JS\nTweak and get instant preview"
+        style="@style/mirrorjsFeatureText" />
+
+    <TextView
+        android:id="@+id/view2"
+        android:layout_marginTop="30dp"
+        android:text="Specify parameters in JS"
+        style="@style/mirrorjsFeatureText" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:gravity="center"
+        android:layout_marginTop="30dp"
+        android:layout_height="wrap_content">
+        <TextView
+            android:id="@+id/view3"
+            android:text="Choreograph"
+            style="@style/mirrorjsFeatureText"
+            android:visibility="visible"
+            android:alpha="0"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+        <TextView
+            android:id="@+id/view4"
+            android:text="animations"
+            android:visibility="visible"
+            android:alpha="0"
+            android:layout_marginLeft="10dp"
+            style="@style/mirrorjsFeatureText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_marginTop="30dp"
+        android:orientation="vertical"
+        android:gravity="center"
+        android:id="@+id/view5"
+        android:alpha="0"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:visibility="visible"
+            style="@style/mirrorjsFeatureText"
+            android:text="Link multiple screens"
+            />
+        <Button
+            android:layout_marginTop="10dp"
+            android:id="@+id/button"
+            android:text="Click me"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+        </LinearLayout>
+
+</LinearLayout>
