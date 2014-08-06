@@ -2,10 +2,20 @@
     xmlns:tools="http://schemas.android.com/tools"
     tools:context="com.jimulabs.tuneinredesign.NowPlayingActivity">
     <item
-        android:id="@+id/search"
+        android:id="@+id/comment"
         android:icon="@android:drawable/ic_menu_search"
-        android:showAsAction="ifRoom"
-        android:title="search" />
+        android:showAsAction="always"
+        android:title="Comment" />
+    <item
+        android:id="@+id/share"
+        android:icon="@android:drawable/ic_menu_search"
+        android:showAsAction="always"
+        android:title="Share" />
+    <item
+        android:id="@+id/add"
+        android:icon="@android:drawable/ic_menu_search"
+        android:showAsAction="always"
+        android:title="Add" />
     <item
         android:id="@+id/action_settings"
         android:orderInCategory="100"
