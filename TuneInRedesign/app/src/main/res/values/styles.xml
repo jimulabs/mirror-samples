@@ -6,6 +6,9 @@
         <item name="android:textStyle">normal</item>
     </style>
 
+    <style name="OverflowButton" parent="android:Widget.DeviceDefault.ActionButton.Overflow">
+        <item name="android:src">@drawable/ic_menu_overflow</item>
+    </style>
 
     <!-- Light theme. -->
     <style name="LightTheme" parent="android:Theme.Holo.Light">
@@ -14,11 +17,7 @@
         <item name="android:actionBarTabStyle">@style/LightActionBarTab</item>
         <item name="android:actionBarTabTextStyle">@style/LightActionBarTabText</item>
         <item name="android:actionBarTabBarStyle">@style/LightActionBarTabBar</item>
-        <item name="android:actionOverflowButtonStyle">@style/LightOverflowButton</item>
-    </style>
-
-    <style name="LightOverflowButton" parent="android:Widget.DeviceDefault.ActionButton.Overflow">
-        <item name="android:src">@drawable/ic_menu_overflow</item>
+        <item name="android:actionOverflowButtonStyle">@style/OverflowButton</item>
     </style>
 
     <style name="LightActionBarTabText" parent="ActionBarTabText">
@@ -45,6 +44,7 @@
         <item name="android:actionBarStyle">@style/DarkActionBar</item>
         <item name="android:actionBarTabStyle">@style/DarkActionBarTab</item>
         <item name="android:actionBarTabTextStyle">@style/DarkActionBarTabText</item>
+        <item name="android:actionOverflowButtonStyle">@style/OverflowButton</item>
     </style>
 
     <style name="DarkActionBar" parent="android:Widget.Holo.ActionBar">
