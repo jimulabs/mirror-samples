@@ -18,6 +18,7 @@
     </style>
 
     <style name="LightOverflowButton" parent="android:Widget.DeviceDefault.ActionButton.Overflow">
+        <item name="android:src">@drawable/ic_menu_overflow</item>
     </style>
 
     <style name="LightActionBarTabText" parent="ActionBarTabText">

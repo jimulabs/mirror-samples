@@ -3,17 +3,17 @@
     tools:context="com.jimulabs.tuneinredesign.NowPlayingActivity">
     <item
         android:id="@+id/comment"
-        android:icon="@android:drawable/ic_menu_search"
+        android:icon="@drawable/ic_menu_comment"
         android:showAsAction="always"
         android:title="Comment" />
     <item
         android:id="@+id/share"
-        android:icon="@android:drawable/ic_menu_search"
+        android:icon="@drawable/ic_menu_share"
         android:showAsAction="always"
         android:title="Share" />
     <item
         android:id="@+id/add"
-        android:icon="@android:drawable/ic_menu_search"
+        android:icon="@drawable/ic_menu_add"
         android:showAsAction="always"
         android:title="Add" />
     <item
