@@ -1,0 +1,40 @@
+<!-- Generated template screen file. Fill the id tags below with content
+with which to populate your previewed layout. For help with sample
+data, please see http://jimulabs.com/sample-data-specifications/ -->
+<screen script="js/home.js">
+    <actionbar menu="@menu/home" icon="@drawable/logo" showTabsFor="@id/pager"/>
+    <_content layout="@layout/home_container">
+        <pager>
+            <_page layout="@android:layout/list_content" title="home">
+                <android-list>
+                    <items count="2">
+                        <_item layout="@layout/list_item_title">
+                            <time>now</time>
+                            <category>Recommended in Adult Contemporary</category>
+                        </_item>
+                        <_item layout="@layout/list_item_channels">
+                            <horizontal_list>
+                                <items include="channels.xml"/>
+                            </horizontal_list>
+                        </_item>
+                        <_item layout="@layout/list_item_title">
+                            <time>now</time>
+                            <category>Recommended in World Music</category>
+                        </_item>
+                        <_item layout="@layout/list_item_channels">
+                            <horizontal_list>
+                                <items include="channels.xml"/>
+                            </horizontal_list>
+                        </_item>
+                    </items>
+                </android-list>
+            </_page>
+            <_page layout="@android:layout/list_content" title="browse"/>
+            <_page layout="@android:layout/list_content" title="explore"/>
+            <_page layout="@android:layout/list_content" title="profile"/>
+        </pager>
+        <title>Eason Chan - Admit it</title>
+        <subtitle>ONE FM</subtitle>
+        <thumbnail src="eason_chan.png"/>
+    </_content>
+</screen>
