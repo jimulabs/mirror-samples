@@ -1,4 +1,4 @@
-This is a sample project based on [Evgeny Belyaev](https://plus.google.com/u/0/+EvgenyBelyaev30PP0/posts). Thanks Evgeny for sharing us the PSD files!
+This is a sample project based on a design by [Evgeny Belyaev](https://plus.google.com/u/0/+EvgenyBelyaev30PP0/posts). Thanks Evgeny for sharing the PSD files!
 
 
 Preview using [Mirror.js](http://jimulabs.com/mirrorjs-preview/) and review the following files:
