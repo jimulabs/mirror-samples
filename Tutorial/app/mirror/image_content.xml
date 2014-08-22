@@ -1,0 +1,11 @@
+<!--
+Populate an ImageView using the "src" attribute. "@drawable/*" references
+can refer to resources in your application's resource directories, or
+resources in the "mirror/res" directory. Use the "mirror/res" directory
+for resources that are only used for development.
+-->
+<screen>
+    <_content layout="@layout/image_content">
+        <image src="@drawable/android"/>
+    </_content>
+</screen>

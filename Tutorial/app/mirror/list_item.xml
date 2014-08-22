@@ -1,0 +1,10 @@
+<!--
+Compare the "<_content>" tag of this screen file to the "<_item>"
+tags in the "mirror/list.xml" screen file.
+-->
+<screen>
+    <_content layout="list_item">
+        <name text="Android" />
+        <avatar src="@drawable/android"/>
+    </_content>
+</screen>
