@@ -1,0 +1,14 @@
+<!--
+The same as the "container" screen, but fills the FrameLayout
+with image content instead of text content.
+-->
+<screen>
+    <_content layout="@layout/container">
+        <heading text="Valuable Content"/>
+        <content_frame>
+            <_content layout="image_content">
+                <image src="@drawable/mascot"/>
+            </_content>
+        </content_frame>
+    </_content>
+</screen>

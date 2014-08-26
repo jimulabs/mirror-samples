@@ -1,0 +1,15 @@
+<!--
+Nesting content inside other content. The "<_content>" tag inside
+"<content_frame>" lets us replace a FrameLayout inside the main
+layout with other content
+-->
+<screen>
+    <_content layout="@layout/container">
+        <heading text="Valuable Content"/>
+        <content_frame>
+            <_content layout="text_content">
+                <body>Some extended body text. You can populate text views like this, with the same result as using the 'text' attribute.</body>
+            </_content>
+        </content_frame>
+    </_content>
+</screen>

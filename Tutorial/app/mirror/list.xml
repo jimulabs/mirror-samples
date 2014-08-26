@@ -1,0 +1,35 @@
+<!--
+To populate a ListView, add an "<items>" tag inside the element
+corresponding to the ListView (in this case, "list" is the id of
+a ListView in "layout/list.xml"). Use the "layout" attribute to
+set the default layout for items in the list, and the "count"
+attribute to duplicate all the items in the list (handy for quickly
+seeing a large list).
+
+Use the "<_item>" tag to add items to the list. You can override the
+default item layout by adding a "layout" attribute to a specific item.
+Inside the "<_item>" tag, you can reference views in the item layout in
+the same way as the main part of the screen file. In this case, inside
+an "<_item>" tag with layout "list_item" looks the same as inside the
+"<_content>" tag in the "mirror/list_item.xml" screen file.
+-->
+<screen>
+    <_content layout="list">
+        <list>
+            <items layout="list_item" >
+                <_item>
+                    <name text="Duke" />
+                    <avatar src="@drawable/duke" />
+                </_item>
+                <_item layout="list_item_special">
+                    <name text="Android" />
+                    <avatar src="@drawable/android" />
+                </_item>
+                <_item>
+                    <name text="Tux" />
+                    <avatar src="@drawable/tux" />
+                </_item>
+            </items>
+        </list>
+    </_content>
+</screen>

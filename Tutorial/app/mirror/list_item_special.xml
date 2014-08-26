@@ -1,0 +1,11 @@
+<!--
+The content for this screen file is the same as for "mirror/list_item.xml".
+Since the layout for this screen file is "list_item_special", though, the
+preview will look different.
+-->
+<screen>
+    <_content layout="@layout/list_item_special">
+        <avatar src="@drawable/android"/>
+        <name text="Android"/>
+    </_content>
+</screen>

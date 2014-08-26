@@ -1,0 +1,28 @@
+<!--
+This demonstrates two high-fidelity prototyping features in Mirror: action
+bars and view pagers. "pager" is the id of a ViewPager in the "view_pager"
+layout. Inside the "<_page>" tags is treated the same way as the inside of
+a "<_content>" or "<_item>" tag.
+
+Compare the first "<_page>" tag here to the "<_content>" tag in
+"mirror/image_content.xml".
+
+You can find a full specification of supported sample data features online:
+http://jimulabs.com/sample-data-specifications/
+-->
+<screen>
+    <actionbar title="Pager Demo" icon="@drawable/mascot" showTabsFor="@id/pager"/>
+    <_content layout="@layout/view_pager">
+        <pager>
+            <_page title="Android" layout="image_content">
+                <image src="@drawable/android" />
+            </_page>
+            <_page title="Duke" layout="image_content">
+                <image src="@drawable/duke" />
+            </_page>
+            <_page title="Text" layout="text_content">
+                <body>This text is displayed in the 'Text' tab</body>
+            </_page>
+        </pager>
+    </_content>
+</screen>

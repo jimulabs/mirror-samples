@@ -1,0 +1,10 @@
+<!--
+You can use resources from your project as values for attributes
+in sample data files. For some attributes such as "textColor",
+special literal values are also supported.
+-->
+<screen>
+    <_content layout="@layout/text_content">
+        <body text="@string/app_name" textColor="#FF0000" />
+    </_content>
+</screen>
