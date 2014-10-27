@@ -1,0 +1,29 @@
+<!-- Generated screen file. Fill the id tags below with content with
+which to populate your previewed layout. For a complete specification
+of sample data, please see http://jimulabs.com/sample-data-specifications/ -->
+<screen>
+    <_content layout="@layout/myrecyclerview">
+        <recycler layoutManager="linear:vertical"> <!-- layoutManager="staggeredGrid:5:vertical" -->
+            <items layout="@layout/image" count="5">
+                <_item>
+                    <image src="images/christina.jpg" />
+                </_item>
+                <_item>
+                    <image src="images/ellie.jpg" />
+                </_item>
+                <_item>
+                    <image src="images/foster.jpg" />
+                </_item>
+                <_item>
+                    <image src="images/keane.jpg" />
+                </_item>
+                <_item>
+                    <image src="images/kodaline.jpg" />
+                </_item>
+                <_item>
+                    <image src="images/pinkrobots.jpg" />
+                </_item>
+            </items>
+        </recycler>
+    </_content>
+</screen>

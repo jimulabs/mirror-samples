@@ -1,0 +1,6 @@
+<screen>
+    <_content layout="@layout/with_toolbar" >
+        <!-- Error creating screen file for file with_toolbar.xml:
+        attribute value must start with quotation or apostrophe not \u201d (position: TEXT seen ...rent">\n    <android.support.v7.widget.Toolbar\n        android:id=\u201d... @6:21)  -->
+    </_content>
+</screen>
