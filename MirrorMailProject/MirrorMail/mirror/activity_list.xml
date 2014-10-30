@@ -1,4 +1,4 @@
-<screen>
+<screen theme="@style/AppTheme.Light">
     <actionbar title="INBOX" icon="inbox" menu="list_menu"/>
     <_content layout="activity_list">
         <mail_list>
