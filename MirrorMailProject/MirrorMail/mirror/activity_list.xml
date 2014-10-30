@@ -1,8 +1,8 @@
-<screen script="js/activity_list.js">
+<screen>
     <actionbar title="INBOX" icon="inbox" menu="list_menu"/>
     <_content layout="activity_list">
         <mail_list>
-            <items include="list_content.xml" count="2"/>
+            <!--<items include="list_content.xml" count="2"/>-->
         </mail_list>
 
         <read_mail>
