@@ -1,4 +1,4 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <item name="activity_list" type="layout">@layout/two_pane</item>
+    <item name="activity_list" type="layout">@layout/one_pane</item>
 </resources>
