@@ -19,6 +19,7 @@
             android:text="Medium Text"
             android:fontFamily="sans-serif-condensed"
             android:textStyle="bold"
+        android:textSize="30sp"
             android:id="@+id/name"/>
 
     <ImageButton
