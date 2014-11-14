@@ -8,6 +8,7 @@ This sample project includes layouts of a fictional email app. It's suitable for
 4. Import this project in Android Studio
 5. Start Mirror by clicking the button on the toolbar within Android Studio
 6. Choose `activity_list` on the device
+7. When making a change to a layout, remember to press `ctrl-S` or `cmd-S` to save the file. Afterwards, you should be able to see the update on the device. 
 
 ## Features demonstrated in this sample project
 
