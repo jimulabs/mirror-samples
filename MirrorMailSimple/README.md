@@ -5,8 +5,9 @@ This sample project includes layouts of a fictional email app. It's suitable for
 1. Follow [this guide](http://jimulabs.com/mirror-docs/mirror-android-studio-plugin-installation-guide/) to install jimu Mirror from JetBrains plugin repository
 2. Enable ADB USB debugging on your device and connect it to your computer (See the section "Setting up your device for debugging" in [this guide](http://jimulabs.com/mirror-docs/mirror-js-designer-guide/))
 3. Alternatively, you can use an emulator such as Genymotion. Note for the best result, use Android 4.3 images since Genymotion (as of v2.3.0) has some issues in its 4.4+ images that make Mirror's updates slower than real devices.
-4. Start Mirror by clicking the button on the toolbar within Android Studio
-5. Choose `activity_list` on the device
+4. Import this project in Android Studio
+5. Start Mirror by clicking the button on the toolbar within Android Studio
+6. Choose `activity_list` on the device
 
 ## Features demonstrated in this sample project
 
