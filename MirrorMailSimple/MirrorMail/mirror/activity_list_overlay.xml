@@ -1,0 +1,27 @@
+<screen overlay="@drawable/overlay">
+    <actionbar
+            title="INBOX"
+            icon="ic_launcher"
+            menu="list_menu"
+            />
+    <_content layout="activity_list">
+        <mail_list>
+            <items include="list_content.xml"/>
+        </mail_list>
+        <content_list>
+            <items include="drawer_content.xml"/>
+        </content_list>
+        <!--drawer content-->
+        <avatar_list>
+            <_item layout="drawer_avatar_active">
+                <drawer_avatar src="images/drawer_av1.png"/>
+            </_item>
+            <_item layout="drawer_avatar_inactive">
+                <drawer_avatar src="images/drawer_av2.png"/>
+            </_item>
+            <_item layout="drawer_avatar_add">
+                <add_avatar src="add_plus"/>
+            </_item>
+        </avatar_list>
+    </_content>
+</screen>

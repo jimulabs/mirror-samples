@@ -1,0 +1,8 @@
+<!-- lastModified: 1415128363598 -->
+<!-- Generated screen file. Fill the id tags below with content with
+which to populate your previewed layout. For a complete specification
+of sample data, please see http://jimulabs.com/sample-data-specifications/ -->
+<screen>
+    <_content layout="@layout/abc_list_menu_item_checkbox">
+    </_content>
+</screen>

@@ -1,0 +1,61 @@
+<resources>
+    <!-- Application theme. -->
+    <style name="AppTheme.Light" parent="android:Theme.Holo.Light">
+        <item name="android:homeAsUpIndicator">@drawable/up_indicator_with_padding</item>
+        <item name="android:actionBarStyle">@style/MyActionBar.Light</item>
+        <item name="android:textColorPrimary">@color/dark_background_color</item>
+        <item name="android:textColorSecondary">@color/dark_background_color</item>
+        <item name="android:textColorTertiary">@color/snippet_text_color</item>
+        <item name="android:windowBackground">@android:color/white</item>
+    </style>
+
+    <style name="AppTheme.Dark" parent="android:Theme.Holo">
+        <item name="circularImageViewStyle">@style/circularImageView.Dark</item>
+    </style>
+
+    <style name="MyActionBar.Light" parent="@android:style/Widget.Holo.Light.ActionBar">
+        <item name="android:background">@drawable/ab_solid_example</item>
+    </style>
+
+    <style name="compose_section_title">
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:textColor">@color/compose_section_text_color</item>
+        <item name="android:layout_marginRight">8dp</item>
+        <item name="android:layout_centerVertical">true</item>
+        <item name="android:layout_marginLeft">@dimen/compose_padding_left_right</item>
+        <item name="android:textSize">13sp</item>
+    </style>
+
+    <style name="centered">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_centerVertical">true</item>
+    </style>
+
+    <style name="textHeading">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:textColor">@color/heading_text_color</item>
+        <item name="android:textAllCaps">true</item>
+    </style>
+
+    <style name="customDividerList">
+        <item name="android:choiceMode">singleChoice</item>
+        <item name="android:divider">@null</item>
+        <item name="android:dividerHeight">0dp</item>
+    </style>
+
+    <style name="circularImageViewDefStyle">
+        <item name="borderColor">@color/list_divider_color</item>
+        <item name="borderSize">@dimen/list_avatar_border_size</item>
+    </style>
+
+    <style name="circularImageView.Light" parent="circularImageViewDefStyle">
+    </style>
+
+    <style name="circularImageView.Dark" parent="circularImageViewDefStyle">
+        <item name="borderColor">#454545</item>
+    </style>
+
+</resources>

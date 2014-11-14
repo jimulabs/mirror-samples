@@ -1,0 +1,34 @@
+<!-- lastModified: 1415039078005 -->
+<!-- Generated screen file. Fill the id tags below with content with
+which to populate your previewed layout. For a complete specification
+of sample data, please see http://jimulabs.com/sample-data-specifications/ -->
+<screen>
+    <_content layout="@layout/a1list">
+        <photo2 layoutManager="linear:vertical">
+        <!-- Examples of valid layoutManager values: "linear", "staggeredGrid:5:horizontal", "staggeredGrid:4" -->
+            <items layout="@android:layout/simple_list_item_1" >
+                <_item>
+                    <text1>Dalmatian</text1>
+                </_item>
+                <_item>
+                    <text1>Great Dane</text1>
+                </_item>
+                <_item>
+                    <text1>Shi Tzu</text1>
+                </_item>
+                <_item>
+                    <text1>Corgi</text1>
+                </_item>
+                <_item>
+                    <text1>Labrador</text1>
+                </_item>
+                <_item>
+                    <text1>Doberman</text1>
+                </_item>
+                <_item>
+                    <text1>Chihuahua</text1>
+                </_item>
+            </items>
+                </photo2>
+    </_content>
+</screen>

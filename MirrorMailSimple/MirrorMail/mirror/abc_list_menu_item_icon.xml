@@ -1,0 +1,12 @@
+<!-- lastModified: 1415128363600 -->
+<!-- Generated screen file. Fill the id tags below with content with
+which to populate your previewed layout. For a complete specification
+of sample data, please see http://jimulabs.com/sample-data-specifications/ -->
+<screen>
+    <_content layout="@layout/abc_list_menu_item_icon">
+        <!-- ImageView Examples:
+        <icon src="@drawable/image_resource" />
+        <icon src="relative_path/image.jpg" /> -->
+        <icon />
+    </_content>
+</screen>

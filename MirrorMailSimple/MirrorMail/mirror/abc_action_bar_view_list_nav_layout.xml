@@ -1,0 +1,8 @@
+<!-- lastModified: 1415128363573 -->
+<!-- Generated screen file. Fill the id tags below with content with
+which to populate your previewed layout. For a complete specification
+of sample data, please see http://jimulabs.com/sample-data-specifications/ -->
+<screen>
+    <_content layout="@layout/abc_action_bar_view_list_nav_layout">
+    </_content>
+</screen>

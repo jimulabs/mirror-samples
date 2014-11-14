@@ -1,0 +1,14 @@
+<!-- Generated screen file. Fill the id tags below with content with
+which to populate your previewed layout. For a complete specification
+of sample data, please see http://jimulabs.com/sample-data-specifications/ -->
+<screen>
+    <_content layout="@layout/fragment_read_mail">
+        <read_mail>
+            <!-- Replace this FrameLayout with a fragment like so:
+            <_content layout="@layout/my_fragment_layout">
+                <my_text_view>TextView in fragment</my_text_view>
+            </_content>
+            -->
+        </read_mail>
+    </_content>
+</screen>

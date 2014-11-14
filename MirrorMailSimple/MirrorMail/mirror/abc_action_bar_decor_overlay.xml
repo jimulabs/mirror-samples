@@ -1,0 +1,15 @@
+<!-- lastModified: 1415128363553 -->
+<!-- Generated screen file. Fill the id tags below with content with
+which to populate your previewed layout. For a complete specification
+of sample data, please see http://jimulabs.com/sample-data-specifications/ -->
+<screen>
+    <_content layout="@layout/abc_action_bar_decor_overlay">
+        <action_bar_activity_content>
+            <!-- Replace this FrameLayout with a fragment like so:
+            <_content layout="@layout/my_fragment_layout">
+                <my_text_view>TextView in fragment</my_text_view>
+            </_content>
+            -->
+        </action_bar_activity_content>
+    </_content>
+</screen>

@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                xmlns:mirrormail="http://schemas.android.com/apk/res-auto"
+                android:id="@+id/item_container"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingBottom="6dp"
+                android:minHeight="@dimen/list_item_height">
+
+    <com.jimulabs.samples.mirrormail.CircularImageView
+            android:id="@+id/avatar"
+            android:layout_width="@dimen/list_avatar_width"
+            android:layout_height="@dimen/list_avatar_width"
+            android:layout_gravity="center_vertical"
+            android:layout_margin="@dimen/list_avatar_margin"
+            android:scaleType="center"/>
+
+    <FrameLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/tick"
+            android:layout_alignLeft="@id/avatar"
+            android:layout_alignRight="@id/avatar"
+            android:layout_alignTop="@id/avatar"
+            android:layout_alignBottom="@id/avatar"
+            android:visibility="invisible"
+            android:background="#999999">
+
+        <ImageView
+                android:id="@+id/tickImage"
+                android:layout_gravity="center"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:scaleX="2"
+                android:scaleY="2"
+                android:src="@drawable/ic_tick"/>
+    </FrameLayout>
+
+    <ImageView
+            android:id="@+id/flag"
+            android:layout_height="wrap_content"
+            android:layout_width="wrap_content"
+            android:src="@drawable/flag"
+            android:layout_alignLeft="@id/avatar"
+            android:visibility="gone"/>
+
+    <TextView
+            android:id="@+id/time"
+            android:layout_alignParentRight="true"
+            android:layout_alignTop="@id/avatar"
+            android:layout_marginRight="@dimen/time_margin_right"
+            android:fontFamily="sans-serif-condensed"
+            android:textSize="@dimen/time_font_size"
+            android:textColor="?android:attr/textColorSecondary"
+            style="@style/textHeading"/>
+
+    <ImageView
+            android:id="@+id/bullet"
+            android:layout_width="@dimen/list_bullet_width"
+            android:layout_height="@dimen/list_bullet_width"
+            android:layout_alignTop="@+id/from"
+            android:layout_alignBottom="@+id/from"
+            android:layout_marginRight="@dimen/bullet_margin_right"
+            android:src="@drawable/mail_counter"
+            android:layout_toRightOf="@id/avatar"
+            android:visibility="gone"/>
+
+    <TextView
+            android:id="@+id/from"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_toRightOf="@+id/bullet"
+            android:layout_alignTop="@id/avatar"
+            android:singleLine="true"
+            android:includeFontPadding="false"
+            android:textColor="?android:attr/textColorPrimary"
+            android:textSize="@dimen/from_font_size"/>
+
+    <ImageView
+            android:id="@+id/attachment"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_toRightOf="@id/from"
+            android:layout_marginLeft="@dimen/paper_clip_margin_right"
+            android:baselineAlignBottom="true"
+            android:layout_alignBaseline="@id/from"
+            android:src="@drawable/attach"
+            android:visibility="gone"/>
+
+    <TextView
+            android:id="@+id/subject"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/from"
+            android:layout_toRightOf="@id/avatar"
+            android:layout_marginRight="@dimen/list_margin_right"
+            android:singleLine="true"
+            android:fontFamily="sans-serif-light"
+            android:textColor="?android:attr/textColorSecondary"
+            android:textSize="@dimen/subject_font_size"/>
+
+    <TextView
+            android:id="@+id/snippet"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/subject"
+            android:layout_toRightOf="@id/avatar"
+            android:layout_marginRight="@dimen/list_margin_right"
+            android:textColor="?android:attr/textColorTertiary"
+            android:fontFamily="sans-serif-light"
+            android:textSize="@dimen/snippet_font_size"/>
+
+</RelativeLayout>

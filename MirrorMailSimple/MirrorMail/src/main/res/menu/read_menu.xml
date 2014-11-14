@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item android:id="@+id/action_up"
+          android:icon="@drawable/read_actionbar_up"
+          android:orderInCategory="100"
+          android:showAsAction="always"/>
+    <item android:id="@+id/action_down"
+          android:icon="@drawable/read_actionbar_down"
+          android:orderInCategory="100"
+          android:showAsAction="always"/>
+    <item android:id="@+id/action_reply"
+          android:icon="@drawable/read_reply"
+          android:orderInCategory="100"
+          android:showAsAction="always"/>
+    <item android:id="@+id/action_forward"
+          android:icon="@drawable/read_forward"
+          android:orderInCategory="100"
+          android:showAsAction="always"/>
+    <item android:id="@+id/action_trash"
+          android:icon="@drawable/read_trash"
+          android:orderInCategory="100"
+          android:showAsAction="always"/>
+</menu>

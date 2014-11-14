@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="heading_text_color">#999999</color>
+    <color name="highlight_color">#f9303f</color>
+
+    <!--List view-->
+    <color name="snippet_text_color">#adadad</color>
+    <color name="dark_background_color">#333333</color>
+    <color name="list_divider_color">#e5e5e5</color>
+    <color name="category_text_color">#f3f3f3</color>
+    <color name="inactive_avatar_border_color">#666666</color>
+
+
+    <!--Read view-->
+    <color name="file_size_color">#55000000</color>
+
+    <!--Compose view-->
+    <color name="compose_bg_color">#f2f2f2</color>
+    <color name="compose_section_text_color">#7f7f7f</color>
+
+</resources>
