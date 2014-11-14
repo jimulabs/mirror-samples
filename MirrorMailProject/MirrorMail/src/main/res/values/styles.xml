@@ -46,15 +46,15 @@
         <item name="android:dividerHeight">0dp</item>
     </style>
 
-    <style name="circularImageViewDef_Style">
+    <style name="circularImageViewDefStyle">
         <item name="borderColor">@color/list_divider_color</item>
         <item name="borderSize">@dimen/list_avatar_border_size</item>
     </style>
 
-    <style name="circularImageView.Light" parent="circularImageViewDef_Style">
+    <style name="circularImageView.Light" parent="circularImageViewDefStyle">
     </style>
 
-    <style name="circularImageView.Dark" parent="circularImageViewDef_Style">
+    <style name="circularImageView.Dark" parent="circularImageViewDefStyle">
         <item name="borderColor">#454545</item>
     </style>
 

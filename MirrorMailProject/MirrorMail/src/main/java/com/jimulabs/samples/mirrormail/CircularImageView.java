@@ -25,7 +25,7 @@ public class CircularImageView extends ImageView {
     }
 
     public CircularImageView(Context context, AttributeSet attrs) {
-        this(context, attrs, R.style.circularImageViewDef_Style);
+        this(context, attrs, R.style.circularImageViewDefStyle);
     }
 
     public CircularImageView(final Context context, final AttributeSet set, final int defStyle) {
