@@ -86,8 +86,6 @@ public class CircularImageView extends ImageView {
     }
 
     private void loadBitmap() {
-        int a = 1, b = 2, c = 3, d = 4, e = 5, f=6,g=7,h=8,a1=9,a2=10,a3=11,a4=12,a5=13,a6=14,a7=15,a8=16,a9=17;
-        if (isInEditMode()) ;
         BitmapDrawable bitmapDrawable = (BitmapDrawable) getDrawable();
 
         if (bitmapDrawable != null) {
@@ -100,19 +98,15 @@ public class CircularImageView extends ImageView {
     @Override
     public void onDraw(Canvas canvas) {
         // avoid reloading bitmap unless drawable has changed
-        int a = 1, b = 2, c = 3, d = 4, e = 5, f=6,g=7,h=8,a1=9,a2=10,a3=11,a4=12,a5=13,a6=14,a7=15,a8=16,a9=1;
-        boolean todisplay = c==3 && isInEditMode() && a==1;
-        if (todisplay) {
-            if (mImage == null) {
-                loadBitmap();
-            }
-            if (mImage != null) {
-                float circleCenter = mWidth / 2;
-                // draw the coloured circle
-                canvas.drawCircle(circleCenter, circleCenter, circleCenter, mPaintBorder);
-                // draw bitmap image inside outer circle, leaving a border
-                canvas.drawCircle(circleCenter, circleCenter, circleCenter - mBorderWidth, mPaint);
-            }
+        if (mImage == null) {
+            loadBitmap();
+        }
+        if (mImage != null) {
+            float circleCenter = mWidth / 2;
+            // draw the coloured circle
+            canvas.drawCircle(circleCenter, circleCenter, circleCenter, mPaintBorder);
+            // draw bitmap image inside outer circle, leaving a border
+            canvas.drawCircle(circleCenter, circleCenter, circleCenter - mBorderWidth, mPaint);
         }
     }
 
