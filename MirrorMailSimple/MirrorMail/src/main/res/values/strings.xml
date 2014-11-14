@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">Mirror Mail</string>
+
+    <!-- Action bar strings-->
+    <string name="drawer_open">evgeny.belyaev@mirrormail.com</string>
+    <string name="list_activity_title">INBOX 2</string>
+    <string name="compose_activity_title">COMPOSE</string>
+    <string name="read_activity_title">1 OF 84</string>
+
+    <!--Read activity strings-->
+    <string name="sender_details">DETAILS</string>
+
+    <!--Compose activity strings-->
+    <string name="compose_to_heading">TO:</string>
+    <string name="compose_cc_heading">CC:</string>
+    <string name="compose_subject_heading">Subject</string>
+</resources>

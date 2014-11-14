@@ -1,0 +1,32 @@
+<screen theme="@style/AppTheme.Light">
+    <actionbar title="INBOX" icon="inbox" menu="list_menu"/>
+    <_content layout="activity_list">
+        <mail_list>
+            <items layout="@layout/mail_list_item" count="20">
+                <_item>
+                    <avatar src="images/ava1.png" />
+                    <snippet>I've got to admit it's getting better. It's a little better all the time.</snippet>
+                    <subject>Have you seen the new version of Mirror?</subject>
+                    <time>17:35</time>
+                    <from visibility="visible">Paul McCartney</from>
+                </_item>
+                <_item>
+                    <avatar src="images/ava2.png" />
+                    <snippet>A person who never made a mistake never tried anything new.</snippet>
+                    <subject>Relatively speaking</subject>
+                    <time>13:21</time>
+                    <from>Albert Einstein</from>
+                </_item>
+            </items>
+            <!--
+               We can include list items from another file as below:
+
+               <items include="list_content.xml" count="2"/>
+            -->
+        </mail_list>
+
+        <read_mail>
+            <_content include="read_mail_content.xml"/>
+        </read_mail>
+    </_content>
+</screen>
