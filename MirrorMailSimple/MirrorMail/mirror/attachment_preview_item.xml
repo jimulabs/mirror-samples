@@ -1,9 +1,16 @@
-<!-- Generated template screen file. Fill the id tags below with content
-with which to populate your previewed layout. For help with sample
-data, please see http://jimulabs.com/sample-data-specifications/ -->
+<!-- [ Mirror metadata ] generatedAt: 1415995373977 -->
+<!-- Generated screen file. Fill the id tags below with content with
+which to populate your previewed layout. For a complete specification
+of sample data, please see http://jimulabs.com/sample-data-specifications/ -->
 <screen>
     <_content layout="@layout/attachment_preview_item">
-        <preview_image></preview_image>
-        <file_size text="textview" />
+        <!-- ImageView Examples:
+        <preview_image src="@drawable/image_resource" />
+        <preview_image src="relative_path/image.jpg" /> -->
+        <preview_image />
+        <!-- TextView Examples:
+        <file_size text="@string/string_resource" />
+        <file_size text="Text literal" textSize="14sp" /> -->
+        <file_size />
     </_content>
 </screen>
