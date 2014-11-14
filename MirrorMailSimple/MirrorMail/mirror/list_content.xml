@@ -1,7 +1,7 @@
 <items layout="mail_list_item">
-    <!--<_item layout="@layout/list_separator">-->
-        <!--<label>Primary</label>-->
-    <!--</_item>-->
+    <_item layout="@layout/list_separator">
+        <label>Primary</label>
+    </_item>
     <_item>
         <avatar src="images/ava1.png" />
         <snippet>I've got to admit it's getting better. It's a little better all the time.</snippet>
@@ -26,9 +26,9 @@
         <time>yesterday</time>
         <from>John F. Kennedy</from>
     </_item>
-    <!--<_item layout="@layout/list_separator">-->
-        <!--<label>Social</label>-->
-    <!--</_item>-->
+    <_item layout="@layout/list_separator">
+        <label>Social</label>
+    </_item>
     <_item>
         <avatar border_color="#000000" borderWidth="5px" src="images/ava4.png" />
         <flag visibility="visible" />
