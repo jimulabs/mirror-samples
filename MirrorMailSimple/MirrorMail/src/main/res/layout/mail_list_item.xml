@@ -10,8 +10,8 @@
 
     <com.jimulabs.samples.mirrormail.CircularImageView
             android:id="@+id/avatar"
-            android:layout_width="@dimen/list_avatar_width"
-            android:layout_height="@dimen/list_avatar_width"
+            android:layout_width="68dp"
+            android:layout_height="68dp"
             android:layout_gravity="center_vertical"
             android:layout_margin="@dimen/list_avatar_margin"
             android:scaleType="center"/>
