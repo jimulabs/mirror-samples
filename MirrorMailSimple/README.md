@@ -2,7 +2,6 @@ This sample project includes layouts of a fictional email app. It's suitable for
 
 ## Getting started
 
-0. Install Android Studio 0.9.3 (or the latest version) from [Canary Channel](http://tools.android.com/download/studio/canary). **Important:** AS0.8.x won't be able to import this project.
 1. Make sure you have downloaded correct SDK platform or modified `build.gradle` based on your environment (see below **SDK Setup**)
 1. Follow [this guide](http://jimulabs.com/mirror-docs/mirror-android-studio-plugin-installation-guide/) to install jimu Mirror from JetBrains plugin repository
 2. Enable ADB USB debugging on your device and connect it to your computer (See the section "Setting up your device for debugging" in [this guide](http://jimulabs.com/mirror-docs/mirror-js-designer-guide/))
