@@ -55,11 +55,18 @@ This project requires SDK platform for Android 4.4.2 (API 19) and build tools 20
 
 There are two options to make it work:
 
-Option 1. Download SDK platform API 19 and build tools 20.0.0 from SDK manager (see below for screenshots)
+- Option 1. Download SDK platform API 19 and build tools 20.0.0 from SDK manager (see screenshots below)
+- Option 2. Update `MirrorMail/build.gradle` according to the SDK platform and build tools versions installed on your computer. NOTE: there are two `build.gradle` files, make sure to look at the one in `MirrorMail`, NOT in the project root.
+
+###Option 1
 ![open sdk manager](readme-images/open-sdk-manager.png)
 
-Option 2. Update `MirrorMail/build.gradle` according the SDK platform and build tools versions installed on your computer. NOTE: there are two `build.gradle` files, make sure to look at the one in `MirrorMail`, NOT in the project root.
-[Screenshots]
+![sdk manager](readme-images/sdk-manager.png)
+###Option 2
+![open gradle](readme-images/open-gradle.png)
+
+![gradle](readme-images/gradle.png)
+
 
 This project is a simplified version of [`MirrorMailProject`](https://github.com/jimulabs/mirror-samples/tree/master/MirrorMailProject) which includes more comprehensive examples of jimu Mirror, such as support for `ViewPager` and a transparent overlay which makes it easy to match a layout with an image.
 
