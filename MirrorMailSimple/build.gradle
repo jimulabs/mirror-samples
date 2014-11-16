@@ -4,10 +4,10 @@ buildscript {
         mavenCentral()
     }
     dependencies {
-        classpath 'com.android.tools.build:gradle:0.14.0'
+        classpath 'com.android.tools.build:gradle:0.12.2'
     }
 }
 
 task wrapper(type: Wrapper) {
-    gradleVersion = '1.10'
+    gradleVersion = '1.12'
 }
