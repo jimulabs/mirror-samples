@@ -56,7 +56,7 @@ This project requires SDK platform for Android 4.4.2 (API 19) and build tools 20
 There are two options to make it work:
 
 Option 1. Download SDK platform API 19 and build tools 20.0.0 from SDK manager (see below for screenshots)
-[Screenshots]
+![open sdk manager](readme-images/open-sdk-manager.png)
 
 Option 2. Update `MirrorMail/build.gradle` according the SDK platform and build tools versions installed on your computer. NOTE: there are two `build.gradle` files, make sure to look at the one in `MirrorMail`, NOT in the project root.
 [Screenshots]
