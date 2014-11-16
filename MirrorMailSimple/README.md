@@ -2,7 +2,8 @@ This sample project includes layouts of a fictional email app. It's suitable for
 
 ## Getting started
 
-0. Install Android Studio 0.9.3 (or the latest version) from [Canary Channel](http://tools.android.com/download/studio/canary)
+0. Install Android Studio 0.9.3 (or the latest version) from [Canary Channel](http://tools.android.com/download/studio/canary). **Important:** AS0.8.x won't be able to import this project.
+1. Make sure you have downloaded correct SDK platform or modified `build.gradle` based on your environment (see below **SDK Setup**)
 1. Follow [this guide](http://jimulabs.com/mirror-docs/mirror-android-studio-plugin-installation-guide/) to install jimu Mirror from JetBrains plugin repository
 2. Enable ADB USB debugging on your device and connect it to your computer (See the section "Setting up your device for debugging" in [this guide](http://jimulabs.com/mirror-docs/mirror-js-designer-guide/))
 3. Alternatively, you can use an emulator such as Genymotion. Note for the best result, use Android 4.3 images since Genymotion (as of v2.3.0) has some issues in its 4.4+ images that make Mirror's updates slower than real devices.
@@ -33,7 +34,7 @@ Once you get Mirror up and running, you can try the following:
   1. open `res/values/styles.xml`
   2. find this line in the first style `AppTheme.Light`:
   ```
-  <item name="android:windowBackground">@android:color/white</item>`
+  <item name="android:windowBackground">@android:color/white</item>
   ```
   3. change it to `@android:color/black`
 - **Responsive layouts:**
@@ -44,4 +45,29 @@ Once you get Mirror up and running, you can try the following:
   5. you should be able to see a two-pane layout: a list of emails along with the detail of a single email
  
 This project is a simplified version of [`MirrorMailProject`](https://github.com/jimulabs/mirror-samples/tree/master/MirrorMailProject) which includes more comprehensive examples of jimu Mirror, such as support for `ViewPager` and a transparent overlay which makes it easy to match a layout with an image.
+
+
+This sample project includes layouts of a fictional email app. It's suitable for quick demos of Mirror features at a workshop.
+
+
+## SDK setup
+This project requires SDK platform for Android 4.4.2 (API 19) and build tools 20.0.0 to compile.
+
+There are two options to make it work:
+
+- Option 1. Download SDK platform API 19 and build tools 20.0.0 from SDK manager (see screenshots below)
+- Option 2. Update `MirrorMail/build.gradle` according to the SDK platform and build tools versions installed on your computer. NOTE: there are two `build.gradle` files, make sure to look at the one in `MirrorMail`, NOT in the project root.
+
+###Option 1
+![open sdk manager](readme-images/open-sdk-manager.png)
+
+![sdk manager](readme-images/sdk-manager.png)
+###Option 2
+![open gradle](readme-images/open-gradle.png)
+
+![gradle](readme-images/gradle.png)
+
+
+This project is a simplified version of [`MirrorMailProject`](https://github.com/jimulabs/mirror-samples/tree/master/MirrorMailProject) which includes more comprehensive examples of jimu Mirror, such as support for `ViewPager` and a transparent overlay which makes it easy to match a layout with an image.
+
 
