@@ -43,12 +43,6 @@ Once you get Mirror up and running, you can try the following:
   4. copy the deleted `activity_list.xml` file back to `res/layout-sw600dp-land`
   5. you should be able to see a two-pane layout: a list of emails along with the detail of a single email
  
-This project is a simplified version of [`MirrorMailProject`](https://github.com/jimulabs/mirror-samples/tree/master/MirrorMailProject) which includes more comprehensive examples of jimu Mirror, such as support for `ViewPager` and a transparent overlay which makes it easy to match a layout with an image.
-
-
-This sample project includes layouts of a fictional email app. It's suitable for quick demos of Mirror features at a workshop.
-
-
 ## SDK setup
 This project requires SDK platform for Android 4.4.2 (API 19) and build tools 20.0.0 to compile.
 
