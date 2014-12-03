@@ -1,0 +1,11 @@
+<resources>
+
+    <!-- Base application theme. -->
+    <style name="AppTheme" parent="LensTheme">
+    </style>
+
+    <style name="AppTheme.Dark" parent="LensTheme.Light.Transition">
+        <item name="colorPrimary">#ffbababa</item>
+        <item name="colorAccent">#ff0000</item>
+    </style>
+</resources>

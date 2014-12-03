@@ -15,5 +15,8 @@ buildscript {
 allprojects {
     repositories {
         jcenter()
+        flatDir {
+            dir '/Users/lintonye/git-repos/layout_previewer/Lens/build/outputs/aar'
+        }
     }
 }

@@ -1,38 +1,43 @@
-package com.jimulabs.paintexamples;
+package com.jimulabs.googlemusicmock;
 
+import android.animation.Animator;
 import android.app.Activity;
+import android.os.Handler;
+import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
+import android.view.ViewAnimationUtils;
 
-import com.jimulabs.paintexamples.lensgen.AnimatorScripts;
 
-
-public class MyActivity extends Activity {
+public class AlbumDetailActivity extends ActionBarActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.one_text_view);
+        setContentView(R.layout.activity_album_detail);
+    }
+
+    @Override
+    public void finish() {
+        super.finish();
+    }
+
+    @Override
+    public void onBackPressed() {
+        super.onBackPressed();
     }
 
     @Override
     protected void onStart() {
         super.onStart();
-        AnimatorScripts.propertyAnimation.init(this);
-        AnimatorScripts.propertyAnimation.startTextView1Anim();
-    }
-
-    @Override
-    protected void onStop() {
-        super.onStop();
-        AnimatorScripts.deinit();
     }
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         // Inflate the menu; this adds items to the action bar if it is present.
-        getMenuInflater().inflate(R.menu.my, menu);
+        getMenuInflater().inflate(R.menu.menu_album_detail, menu);
         return true;
     }
 
@@ -42,9 +47,12 @@ public class MyActivity extends Activity {
         // automatically handle clicks on the Home/Up button, so long
         // as you specify a parent activity in AndroidManifest.xml.
         int id = item.getItemId();
+
+        //noinspection SimplifiableIfStatement
         if (id == R.id.action_settings) {
             return true;
         }
+
         return super.onOptionsItemSelected(item);
     }
 }
