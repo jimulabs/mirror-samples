@@ -1,5 +1,6 @@
 package com.jimulabs.googlemusicmock;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.ActionBarActivity;
 import android.support.v7.widget.RecyclerView;
@@ -10,6 +11,8 @@ import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
+
+import com.jimulabs.mirror.util.Optional;
 
 import butterknife.ButterKnife;
 import butterknife.InjectView;
@@ -22,28 +25,45 @@ public class AlbumListActivity extends ActionBarActivity {
 
     @InjectView(R.id.toolbar)
     Toolbar mToolbar;
+    private Lens mLens;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_album_list);
+
+        mLens = new Lens(this, R.layout.activity_album_list);
+//        mLens.init();
+
         ButterKnife.inject(this);
         mToolbar.inflateMenu(R.menu.menu_album_list);
         populate();
     }
 
-    static class AlbumVH extends RecyclerView.ViewHolder {
+    interface OnVHClickedListener {
+        void onVHClicked(AlbumVH vh);
+    }
+
+    static class AlbumVH extends RecyclerView.ViewHolder implements View.OnClickListener {
+        private final OnVHClickedListener mListener;
         @InjectView(R.id.album_art)
         ImageView albumArt;
 
-        public AlbumVH(View itemView) {
+        public AlbumVH(View itemView, OnVHClickedListener listener) {
             super(itemView);
             ButterKnife.inject(this, itemView);
+            itemView.setOnClickListener(this);
+            mListener = listener;
+        }
+
+        @Override
+        public void onClick(View v) {
+            mListener.onVHClicked(this);
         }
     }
 
     private void populate() {
-        StaggeredGridLayoutManager lm = new StaggeredGridLayoutManager(2, StaggeredGridLayoutManager.VERTICAL);
+        StaggeredGridLayoutManager lm = new StaggeredGridLayoutManager(4, StaggeredGridLayoutManager.VERTICAL);
         mAlbumList.setLayoutManager(lm);
         final int[] albumArts = {R.drawable.christina,
                 R.drawable.ellie,
@@ -51,25 +71,37 @@ public class AlbumListActivity extends ActionBarActivity {
                 R.drawable.keane,
                 R.drawable.kodaline,
                 R.drawable.pinkrobots,};
-        RecyclerView.Adapter adapter = new RecyclerView.Adapter() {
+        RecyclerView.Adapter adapter = new RecyclerView.Adapter<AlbumVH>() {
             @Override
-            public RecyclerView.ViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
+            public AlbumVH onCreateViewHolder(ViewGroup parent, int viewType) {
                 View albumView = getLayoutInflater().inflate(R.layout.album_grid_item, parent, false);
-                return new AlbumVH(albumView);
+                return new AlbumVH(albumView, new OnVHClickedListener() {
+                    @Override
+                    public void onVHClicked(AlbumVH vh) {
+                        int albumArtResId = albumArts[vh.getPosition() % albumArts.length];
+                        Intent intent = new Intent(AlbumListActivity.this, AlbumDetailActivity.class);
+                        intent.putExtra(AlbumDetailActivity.EXTRA_ALBUM_ART_RESID, albumArtResId);
+
+                        View sharedView = vh.albumArt;
+                        mLens.startActivityWithTransition(intent, Optional.of(sharedView), sharedView);
+                    }
+                });
             }
 
             @Override
-            public void onBindViewHolder(RecyclerView.ViewHolder holder, int position) {
-                ((AlbumVH)holder).albumArt.setImageResource(albumArts[position]);
+            public void onBindViewHolder(AlbumVH holder, int position) {
+                holder.albumArt.setImageResource(albumArts[position % albumArts.length]);
             }
 
             @Override
             public int getItemCount() {
-                return albumArts.length;
+                return albumArts.length * 4;
             }
+
         };
         mAlbumList.setAdapter(adapter);
     }
+
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {

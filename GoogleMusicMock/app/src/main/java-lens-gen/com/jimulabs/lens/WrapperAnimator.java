@@ -1,4 +1,4 @@
-package com.jimulabs.googlemusicmock;
+package com.jimulabs.lens;
 
 import android.animation.Animator;
 import android.animation.TimeInterpolator;

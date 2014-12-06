@@ -25,12 +25,18 @@ android {
     lintOptions {
         disable 'InvalidPackage'
     }
+
+    sourceSets {
+        main.java.srcDirs('src/main/java', 'src/main/java-lens-gen')
+    }
 }
 
 dependencies {
     compile fileTree(dir: 'libs', include: ['*.jar'])
     compile 'com.android.support:appcompat-v7:21.0.2'
     compile 'com.android.support:recyclerview-v7:21.0.+'
-    compile 'com.jimulabs.lens:Lens:2.3-beta@aar'
+    compile 'com.jimulabs.lens:Lens:2.3-js@aar'
     compile 'com.jakewharton:butterknife:6.0.0'
+    //TODO to remove this after this is done: https://trello.com/c/DEh5f1ld
+    compile 'com.jimulabs.mirror:MirrorBaseLib:2.3-js'
 }
