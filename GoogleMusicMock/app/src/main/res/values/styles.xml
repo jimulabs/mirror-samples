@@ -4,11 +4,9 @@
     <style name="AppTheme" parent="LensTheme">
     </style>
 
-    <style name="AppTheme.Dark" parent="android:Theme.Material.NoActionBar">
+    <style name="AppTheme.Dark" parent="LensTheme.Light.Transition">
         <item name="android:colorPrimary">#ffba0010</item>
         <item name="android:colorPrimaryDark">#ff87000a</item>
         <item name="android:colorAccent">#ff0000</item>
-        <item name="android:windowContentTransitions">true</item>
-        <item name="android:windowEnterTransition">@transition/unfold_content</item>
     </style>
 </resources>

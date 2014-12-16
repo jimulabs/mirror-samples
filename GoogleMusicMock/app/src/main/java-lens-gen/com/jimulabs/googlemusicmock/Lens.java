@@ -8,6 +8,7 @@ import android.transition.ChangeImageTransform;
 import android.transition.Explode;
 import android.transition.Slide;
 import android.transition.Transition;
+import android.transition.TransitionInflater;
 import android.transition.TransitionSet;
 import android.util.DisplayMetrics;
 import android.view.View;
@@ -45,10 +46,12 @@ public class Lens extends LensBase {
                 RevealTransition reveal = new RevealTransition(epicenter, smallRadius, bigRadius, duration);
                 TransitionSet transition = new TransitionSet();
 //                transition.addTransition(reveal);
-                transition.addTransition(new Explode());
-                Fold fold = new Fold();
-                fold.addTarget(R.id.title_container);
-                transition.addTransition(fold);
+                transition.setOrdering(TransitionSet.ORDERING_SEQUENTIAL);
+
+                Transition rest = TransitionInflater.from(mHostActivity).inflateTransition(R.transition.unfold_content);
+                transition.addTransition(rest);
+
+
 
                 setEnterTransition(transition);
                 setExitTransition(transition);

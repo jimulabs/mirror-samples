@@ -1,12 +1,17 @@
 package com.jimulabs.googlemusicmock;
 
+import android.animation.ObjectAnimator;
 import android.app.Activity;
+import android.graphics.Path;
 import android.os.Bundle;
 import android.os.Handler;
 import android.support.v7.app.ActionBarActivity;
 import android.support.v7.widget.Toolbar;
+import android.transition.ChangeBounds;
+import android.transition.PatternPathMotion;
 import android.transition.Slide;
 import android.transition.Transition;
+import android.transition.TransitionInflater;
 import android.view.Gravity;
 import android.view.Menu;
 import android.view.MenuItem;
@@ -15,8 +20,11 @@ import android.view.ViewGroup;
 import android.view.ViewTreeObserver;
 import android.widget.ImageView;
 
+import com.jimulabs.lens.Fold;
+
 import butterknife.ButterKnife;
 import butterknife.InjectView;
+import butterknife.OnClick;
 
 
 public class AlbumDetailActivity extends Activity {
@@ -35,7 +43,7 @@ public class AlbumDetailActivity extends Activity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_album_detail);
         mLens = new Lens(this, R.layout.activity_album_detail);
-//        mLens.init();
+        mLens.init();
         ButterKnife.inject(this);
         populate();
     }
@@ -43,7 +51,11 @@ public class AlbumDetailActivity extends Activity {
     private void populate() {
         int albumArtResId = getIntent().getIntExtra(EXTRA_ALBUM_ART_RESID, 0);
         albumArtView.setImageResource(albumArtResId);
-//        AnimatorScripts.albumDetails.startAlbumDetailsEnter();
+    }
+
+    @OnClick(R.id.fab)
+    public void onFabClick() {
+        AnimatorScript_AlbumDetails.enter().start();
     }
 
     @Override
@@ -59,36 +71,6 @@ public class AlbumDetailActivity extends Activity {
     @Override
     protected void onStart() {
         super.onStart();
-//
-//        getWindow().getSharedElementEnterTransition().addListener(new Transition.TransitionListener() {
-//            @Override
-//            public void onTransitionStart(Transition transition) {
-//
-//            }
-//
-//            @Override
-//            public void onTransitionEnd(Transition transition) {
-//                ViewGroup sceneRoot = (ViewGroup) findViewById(android.R.id.content);
-//                getContentTransitionManager().beginDelayedTransition(sceneRoot, new Slide(Gravity.TOP));
-//                titleContainer.setVisibility(View.VISIBLE);
-//
-//            }
-//
-//            @Override
-//            public void onTransitionCancel(Transition transition) {
-//
-//            }
-//
-//            @Override
-//            public void onTransitionPause(Transition transition) {
-//
-//            }
-//
-//            @Override
-//            public void onTransitionResume(Transition transition) {
-//
-//            }
-//        });
     }
 
     @Override

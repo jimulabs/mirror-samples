@@ -33,7 +33,7 @@ public class AlbumListActivity extends ActionBarActivity {
         setContentView(R.layout.activity_album_list);
 
         mLens = new Lens(this, R.layout.activity_album_list);
-//        mLens.init();
+        mLens.init();
 
         ButterKnife.inject(this);
         mToolbar.inflateMenu(R.menu.menu_album_list);

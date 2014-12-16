@@ -5,25 +5,14 @@
     android:layout_height="match_parent">
 
     <RelativeLayout
-        android:background="?attr/android:colorPrimary"
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
-
-        <Button
-            android:id="@+id/button"
-            android:text="Come on!"
-            android:layout_alignParentTop="true"
-            android:layout_alignParentLeft="true"
-            android:layout_alignParentStart="true"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content" />
 
         <ImageView
             android:layout_width="match_parent"
             android:layout_height="400dp"
             android:scaleType="centerCrop"
             android:id="@+id/album_art"
-            android:layout_below="@id/button"
             android:transitionName="albumArt" />
 
         <RelativeLayout
