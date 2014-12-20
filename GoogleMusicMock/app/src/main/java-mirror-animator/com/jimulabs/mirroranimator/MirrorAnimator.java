@@ -52,9 +52,17 @@ public abstract class MirrorAnimator {
 
     public abstract long getStartDelay();
 
-    public void start() {
-        setupStage(this, new UseFirstFrameOnlyStageSetter());
+    public void startNoStageSetting() {
         getAnimator().start();
+    }
+
+    public void start() {
+        start(new UseFirstFrameOnlyStageSetter());
+    }
+
+    public void start(StageSetter stageSetter) {
+        setupStage(this, stageSetter);
+        startNoStageSetting();
     }
 
     private void setupStage(MirrorAnimator animator, StageSetter stageSetter) {

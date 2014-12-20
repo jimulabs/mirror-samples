@@ -1,8 +1,6 @@
 package com.jimulabs.googlemusicmock;
 
 import android.content.Context;
-import android.graphics.Rect;
-import android.util.Log;
 import android.view.View;
 
 import com.jimulabs.mirroranimator.MirrorAnimator;
@@ -25,28 +23,48 @@ public class AlbumDetailScript extends MirrorAnimatorScript {
     }
 
     public MirrorAnimator showTitleContainer() {
-        MirrorView v = $("title_container");
-        return fold(v);
+        return unfold($("title_container"));
     }
 
     public MirrorAnimator showInfoContainer() {
-        MirrorView v = $("info_container");
-        return fold(v);
+        return unfold($("info_container"));
     }
 
-    public MirrorAnimator animateAll() {
+    public MirrorAnimator enter() {
         // return `[showTitleContainer() -> showInfoContainer(), 500 -> showFab()]`
         return tg(sq(showTitleContainer(), showInfoContainer()), showFab().startDelay(200));
     }
 
+    public MirrorAnimator hideFab() {
+        return $("fab").scale(1, 0);
+    }
+
+    public MirrorAnimator hideTitleContainer() {
+        return fold($("title_container"));
+    }
+
+    public MirrorAnimator hideInfoContainer() {
+        return fold($("info_container"));
+    }
+
+    public MirrorAnimator exit() {
+        // return `hideFab() -> hideInfoContainer() -> hideTitleContainer()`
+        return sq(hideFab(), hideInfoContainer(), hideTitleContainer());
+    }
+
     @Override
     protected void editModeScript(View rootView) {
-        setGlobalSpeed(0.2);
-        animateAll().start();
+//        setGlobalSpeed(0.5);
+        enter().start();
+//        showTitleContainer().start();
+    }
+
+    private MirrorAnimator unfold(MirrorView v) {
+        return v.bottom(v.getTop(), v.getTop() + v.getHeight());
     }
 
     private MirrorAnimator fold(MirrorView v) {
-        return v.bottom(v.getTop(), v.getTop() + v.getHeight());
+        return v.bottom(v.getTop() + v.getHeight(), v.getTop());
     }
 
 }
