@@ -2,6 +2,7 @@ package com.jimulabs.mirroranimator;
 
 import android.animation.Animator;
 import android.animation.AnimatorSet;
+import android.animation.Keyframe;
 import android.animation.ObjectAnimator;
 import android.animation.TimeInterpolator;
 import android.view.animation.AccelerateDecelerateInterpolator;
@@ -9,6 +10,7 @@ import android.view.animation.AccelerateDecelerateInterpolator;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Collection;
+import java.util.Collections;
 import java.util.List;
 
 /**
@@ -32,34 +34,30 @@ public class AnimatorUtils {
         return sequence(Arrays.asList(animators));
     }
 
-    public static MirrorAnimator together(Collection<MirrorAnimator> animators) {
-        AnimatorSet set = new AnimatorSet();
-        set.playTogether(collectAnimators(animators));
-        return new MirrorAnimator(set);
+    public static MirrorAnimator together(List<MirrorAnimator> animators) {
+        MirrorAnimatorSet set = new MirrorAnimatorSet(animators,
+                MirrorAnimatorSet.Ordering.Together);
+        return set;
     }
 
     public static MirrorAnimator sequence(List<MirrorAnimator> animators) {
-        AnimatorSet set = new AnimatorSet();
-        set.playSequentially(collectAnimators(animators));
-        return new MirrorAnimator(set);
-    }
-
-    static List<Animator> collectAnimators(Collection<MirrorAnimator> mirrorAnimators) {
-        List<Animator> animators = new ArrayList<>(mirrorAnimators.size());
-        for (MirrorAnimator ma : mirrorAnimators) {
-            animators.add(ma.getAnimator());
-        }
-        return animators;
+        MirrorAnimatorSet set = new MirrorAnimatorSet(animators,
+                MirrorAnimatorSet.Ordering.Sequentially);
+        return set;
     }
 
     public static MirrorAnimator animator(Object target, String property, int... values) {
-        Animator animator = ObjectAnimator.ofInt(target, property, values);
-        return new MirrorAnimator(animator);
+        ObjectAnimator animator = ObjectAnimator.ofInt(target, property, values);
+        Keyframe firstFrame = Keyframe.ofInt(0, values[0]);
+        Keyframe lastFrame = Keyframe.ofInt(0, values[values.length-1]);
+        return new MirrorObjectAnimator(animator, firstFrame, lastFrame);
     }
 
     public static MirrorAnimator animator(Object target, String property, float... values) {
-        Animator animator = ObjectAnimator.ofFloat(target, property, values);
-        return new MirrorAnimator(animator);
+        ObjectAnimator animator = ObjectAnimator.ofFloat(target, property, values);
+        Keyframe firstFrame = Keyframe.ofFloat(0, values[0]);
+        Keyframe lastFrame = Keyframe.ofFloat(0, values[values.length-1]);
+        return new MirrorObjectAnimator(animator, firstFrame, lastFrame);
     }
 
 }

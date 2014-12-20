@@ -1,6 +1,7 @@
 package com.jimulabs.googlemusicmock;
 
 import android.content.Context;
+import android.graphics.Rect;
 import android.util.Log;
 import android.view.View;
 
@@ -40,7 +41,7 @@ public class AlbumDetailScript extends MirrorAnimatorScript {
 
     @Override
     protected void editModeScript(View rootView) {
-        setGlobalSpeed(1);
+        setGlobalSpeed(0.2);
         animateAll().start();
     }
 
