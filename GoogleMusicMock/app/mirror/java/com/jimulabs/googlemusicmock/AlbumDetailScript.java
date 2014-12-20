@@ -53,7 +53,7 @@ public class AlbumDetailScript extends MirrorAnimatorScript {
     }
 
     @Override
-    protected void editModeScript(View rootView) {
+    protected void enterSandbox() {
 //        setGlobalSpeed(0.5);
         enter().start();
 //        showTitleContainer().start();

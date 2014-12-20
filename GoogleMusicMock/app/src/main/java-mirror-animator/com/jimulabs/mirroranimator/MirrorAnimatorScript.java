@@ -32,8 +32,11 @@ public abstract class MirrorAnimatorScript {
     }
 
     public static class CannotFindViewException extends RuntimeException {
+        public final String ref;
+
         public CannotFindViewException(String ref) {
             super(ref);
+            this.ref = ref;
         }
     }
 
@@ -72,10 +75,10 @@ public abstract class MirrorAnimatorScript {
         AnimatorUtils.setGlobalSpeed(speed);
     }
 
-    protected abstract void editModeScript(View rootView);
+    protected abstract void enterSandbox();
 
     public void runEditModeScript() {
-        editModeScript(mRootView);
+        enterSandbox();
     }
 
     public static int resolveResourceId(Context context, ResRef ref) {
