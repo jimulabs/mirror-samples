@@ -53,7 +53,7 @@ public abstract class MirrorAnimator {
     public abstract long getStartDelay();
 
     public void start() {
-        setupStage(this, new FirstOccurrenceOnlyStageSetter());
+        setupStage(this, new UseFirstFrameOnlyStageSetter());
         getAnimator().start();
     }
 
@@ -90,9 +90,9 @@ public abstract class MirrorAnimator {
         }
     }
 
-    private static class FirstOccurrenceOnlyStageSetter implements StageSetter {
+    private static class UseFirstFrameOnlyStageSetter implements StageSetter {
         private static final String LOG_TAG = "FirstOccurrenceOnly";
-        public static final List<String> LAYOUT_AFFECTING_PROPS = Arrays.asList(new String[]{"left", "right", "top", "bottom"});
+        private static final List<String> PROPS_AFFECTED_BY_LAYOUT = Arrays.asList(new String[]{"left", "right", "top", "bottom"});
         private Map<Object, Set<String>> mRegistry = new HashMap<>();
 
         @Override
@@ -131,7 +131,7 @@ public abstract class MirrorAnimator {
         }
 
         private boolean willBeUpdatedDuringLayout(String propertyName) {
-            return LAYOUT_AFFECTING_PROPS.contains(propertyName);
+            return PROPS_AFFECTED_BY_LAYOUT.contains(propertyName);
         }
 
         private void callSetter(Object target, String propertyName, Keyframe firstFrame) {
