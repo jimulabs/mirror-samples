@@ -1,4 +1,4 @@
-package com.jimulabs.lens;
+package com.jimulabs.mirroranimator;
 
 import android.animation.Animator;
 import android.graphics.Point;

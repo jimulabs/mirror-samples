@@ -30,7 +30,7 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:textAppearance="?android:attr/textAppearanceLargeInverse"
+                android:textAppearance="?android:attr/textAppearanceLarge"
                 android:text="Large Text"
                 android:id="@+id/title" />
 
@@ -39,7 +39,6 @@
                 android:layout_height="wrap_content"
                 android:layout_below="@id/title"
                 android:layout_alignLeft="@id/title"
-                android:textAppearance="?android:attr/textAppearanceInverse"
                 android:text="New Text"
                 android:id="@+id/subtitle" />
         </RelativeLayout>
@@ -77,6 +76,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="50dp"
                 android:layout_weight="1"
+                android:textAppearance="?android:attr/textAppearanceInverse"
                 android:textStyle="bold"
                 android:text="New Text"
                 android:id="@+id/name" />
@@ -84,6 +84,7 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:textAppearance="?android:attr/textAppearanceInverse"
                 android:layout_marginRight="20dp"
                 android:text="New Text"
                 android:id="@+id/time" />

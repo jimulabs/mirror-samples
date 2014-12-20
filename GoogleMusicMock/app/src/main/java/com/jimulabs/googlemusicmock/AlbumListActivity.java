@@ -12,28 +12,23 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 
-import com.jimulabs.mirror.util.Optional;
-
 import butterknife.ButterKnife;
 import butterknife.InjectView;
 
 
 public class AlbumListActivity extends ActionBarActivity {
+    public static Object sHook;
 
     @InjectView(R.id.album_list)
     RecyclerView mAlbumList;
 
     @InjectView(R.id.toolbar)
     Toolbar mToolbar;
-    private Lens mLens;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_album_list);
-
-        mLens = new Lens(this, R.layout.activity_album_list);
-        mLens.init();
 
         ButterKnife.inject(this);
         mToolbar.inflateMenu(R.menu.menu_album_list);
@@ -83,7 +78,6 @@ public class AlbumListActivity extends ActionBarActivity {
                         intent.putExtra(AlbumDetailActivity.EXTRA_ALBUM_ART_RESID, albumArtResId);
 
                         View sharedView = vh.albumArt;
-                        mLens.startActivityWithTransition(intent, Optional.of(sharedView), sharedView);
                     }
                 });
             }

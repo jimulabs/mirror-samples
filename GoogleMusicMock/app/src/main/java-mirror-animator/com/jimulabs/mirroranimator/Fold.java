@@ -1,13 +1,12 @@
-package com.jimulabs.lens;
+package com.jimulabs.mirroranimator;
 
 import android.animation.Animator;
 import android.animation.ObjectAnimator;
-import android.animation.PropertyValuesHolder;
 import android.annotation.TargetApi;
 import android.content.Context;
 import android.os.Build;
 import android.transition.Explode;
-import android.transition.Fade;
+import android.transition.Slide;
 import android.transition.TransitionValues;
 import android.transition.Visibility;
 import android.util.AttributeSet;
@@ -18,25 +17,33 @@ import android.view.ViewGroup;
  * Created by lintonye on 14-12-05.
  */
 @TargetApi(Build.VERSION_CODES.LOLLIPOP)
-public class Scale extends Visibility {
-    public Scale(Context context, AttributeSet attrs) {
+public class Fold extends Visibility {
+    public Fold(Context context, AttributeSet attrs) {
         super(context, attrs);
+    }
+
+    public Fold() {
+        super();
     }
 
     @Override
     public Animator onAppear(ViewGroup sceneRoot, View view, TransitionValues startValues, TransitionValues endValues) {
-        return createScaleAnimator(view, 0, 1);
+        return createFoldAnimator(view, false);
     }
 
     @Override
     public Animator onDisappear(ViewGroup sceneRoot, View view, TransitionValues startValues, TransitionValues endValues) {
-        return createScaleAnimator(view, 1, 0);
+        return createFoldAnimator(view, true);
     }
 
-    public Animator createScaleAnimator(View view, float startScale, float endScale) {
-        PropertyValuesHolder holderX = PropertyValuesHolder.ofFloat("scaleX", startScale, endScale);
-        PropertyValuesHolder holderY = PropertyValuesHolder.ofFloat("scaleX", startScale, endScale);
-        ObjectAnimator animator = ObjectAnimator.ofPropertyValuesHolder(view, holderX, holderY);
+    public Animator createFoldAnimator(View view, boolean folding) {
+        int start = view.getTop();
+        int end = view.getTop() + view.getMeasuredHeight() - 1;
+        if (folding) {
+            int temp = start;
+            start = end; end = temp;
+        }
+        ObjectAnimator animator = ObjectAnimator.ofInt(view, "bottom", start, end);
         return animator;
     }
 }

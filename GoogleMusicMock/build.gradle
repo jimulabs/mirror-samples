@@ -20,4 +20,10 @@ allprojects {
             dir '/Users/lintonye/git-repos/layout_previewer/MirrorBaseLib/build/libs'
         }
     }
+
+    tasks.withType(Exec) {
+        doFirst {
+            println commandLine
+        }
+    }
 }
