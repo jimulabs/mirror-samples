@@ -53,7 +53,7 @@ public class ChartView extends View {
 
     private Path points2Path(Point... points) {
         int midX = getMeasuredWidth() / 2;
-        int midY = getMeasuredHeight() / 2;
+        int midY = computeMidY(points);
         float spanY = getSpanY();
         float spanX = getSpanX();
 
@@ -62,14 +62,26 @@ public class ChartView extends View {
                 applySpan(points[0].y, midY, spanY));
 
         for (int i = 1; i < points.length; i++) {
-            Point p0 = points[i - 1];
-            Point p = points[i];
-            Point m = midpoint(p0, p);
+            int x = applySpan(points[i].x, midX, spanX);
+            int y = applySpan(points[i].y, midY, spanY);
+            path.lineTo(x, y);
 
-            path.quadTo(applySpan(m.x - 50, midX, spanX), applySpan(m.y, midY, spanY),
-                    applySpan(p.x, midX, spanX), applySpan(p.y, midY, spanY));
+//            Point p0 = points[i - 1];
+//            Point p = points[i];
+//            Point m = midpoint(p0, p);
+//            path.quadTo(applySpan(m.x, midX, spanX), applySpan(m.y, midY, spanY),
+//                    applySpan(p.x, midX, spanX), applySpan(p.y, midY, spanY));
         }
         return path;
+    }
+
+    private int computeMidY(Point[] points) {
+        int minY = 10000, maxY = 0;
+        for (Point p: points) {
+            minY = Math.min(minY, p.y);
+            maxY = Math.max(maxY, p.y);
+        }
+        return (minY + maxY) / 2;
     }
 
     private int applySpan(int v, int mid, float span) {

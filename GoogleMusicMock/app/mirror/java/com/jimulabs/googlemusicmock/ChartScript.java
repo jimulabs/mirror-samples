@@ -30,10 +30,11 @@ public class ChartScript extends MirrorAnimatorScript {
     protected void enterSandbox() {
         ChartView chart = (ChartView) $("chart").getView();
 //        chart.setSpanY(0.2f);
-        List<Point> points = createRandomPoints(10, chart.getMeasuredWidth(), chart.getMeasuredHeight());
+        List<Point> points = createRandomPoints(20, chart.getMeasuredWidth(), chart.getMeasuredHeight()/3);
         chart.setData(points.toArray(new Point[0]));
 
-        sq(enter(), exit()).start();
+        sq(exit(), enter()).start();
+//        sq(exit(), enter(), exit(), enter()).start();
 //        enter().start();
 //        exit().start();
     }
@@ -73,7 +74,7 @@ public class ChartScript extends MirrorAnimatorScript {
     private List<Point> createRandomPoints(int count, int maxX, int maxY) {
         List<Point> points = new ArrayList<>(count);
         Random random = new Random();
-        int offsetY = 0;
+        int offsetY = maxY;
         int marginX = 5;
         for (int i = 0; i < count; i++) {
             int x = marginX + i * ((maxX + 2 * marginX) / (count - 1));
