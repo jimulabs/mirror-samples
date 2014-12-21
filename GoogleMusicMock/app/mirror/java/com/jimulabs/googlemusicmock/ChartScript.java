@@ -1,19 +1,18 @@
 package com.jimulabs.googlemusicmock;
 
 import android.content.Context;
-import android.graphics.Color;
+import android.graphics.Path;
+import android.graphics.Point;
 import android.view.View;
 
-import com.github.mikephil.charting.charts.BarLineChartBase;
-import com.github.mikephil.charting.charts.LineChart;
-import com.github.mikephil.charting.data.Entry;
-import com.github.mikephil.charting.data.LineData;
-import com.github.mikephil.charting.data.LineDataSet;
-import com.github.mikephil.charting.utils.ColorTemplate;
-import com.github.mikephil.charting.utils.LimitLine;
+import com.jimulabs.mirroranimator.MirrorAnimator;
 import com.jimulabs.mirroranimator.MirrorAnimatorScript;
 
 import java.util.ArrayList;
+import java.util.Collections;
+import java.util.Comparator;
+import java.util.List;
+import java.util.Random;
 
 /**
  * Created by lintonye on 2014-12-20.
@@ -29,43 +28,64 @@ public class ChartScript extends MirrorAnimatorScript {
 
     @Override
     protected void enterSandbox() {
-        LineChart chart = (LineChart) $("chart").getView();
-        setData(chart, 10, 80);
+        ChartView chart = (ChartView) $("chart").getView();
+//        chart.setSpanY(0.2f);
+        List<Point> points = createRandomPoints(10, chart.getMeasuredWidth(), chart.getMeasuredHeight());
+        chart.setData(points.toArray(new Point[0]));
+
+        sq(enter(), exit()).start();
+//        enter().start();
+//        exit().start();
     }
 
-    private void setData(LineChart chart, int count, float range) {
-        ArrayList<String> xVals = new ArrayList<String>();
+    public MirrorAnimator exit() {
+        return sq(shrinkY(), shrinkX());
+    }
+
+    public MirrorAnimator enter() {
+        return sq(expandX(), expandY());
+    }
+
+    public MirrorAnimator shrinkX() {
+        return spanX(1f, 0f);
+    }
+
+    public MirrorAnimator shrinkY() {
+        return spanY(1f, 0f);
+    }
+
+    public MirrorAnimator expandX() {
+        return spanX(0f, 1f);
+    }
+
+    public MirrorAnimator expandY() {
+        return spanY(0f, 1f);
+    }
+
+    private MirrorAnimator spanX(float startSpanX, float endSpanX) {
+        return $("chart").animator("spanX", startSpanX, endSpanX).duration(1100);
+    }
+
+    private MirrorAnimator spanY(float startSpanY, float endSpanY) {
+        return $("chart").animator("spanY", startSpanY, endSpanY).duration(1100);
+    }
+
+    private List<Point> createRandomPoints(int count, int maxX, int maxY) {
+        List<Point> points = new ArrayList<>(count);
+        Random random = new Random();
+        int offsetY = 0;
+        int marginX = 5;
         for (int i = 0; i < count; i++) {
-            xVals.add((i) + "");
+            int x = marginX + i * ((maxX + 2 * marginX) / (count - 1));
+            int y = random.nextInt(maxY) + offsetY;
+            points.add(new Point(x, y));
         }
-
-        ArrayList<Entry> yVals = new ArrayList<Entry>();
-
-        for (int i = 0; i < count; i++) {
-            float mult = (range + 1);
-            float val = (float) (Math.random() * mult) + 3;// + (float)
-            // ((mult *
-            // 0.1) / 10);
-            yVals.add(new Entry(val, i));
-        }
-
-        // create a dataset and give it a type
-        LineDataSet set1 = new LineDataSet(yVals, "DataSet 1");
-        set1.setColor(ColorTemplate.getHoloBlue());
-        set1.setCircleColor(ColorTemplate.getHoloBlue());
-        set1.setLineWidth(2f);
-        set1.setCircleSize(4f);
-        set1.setFillAlpha(65);
-        set1.setFillColor(ColorTemplate.getHoloBlue());
-        set1.setHighLightColor(Color.rgb(244, 117, 117));
-
-        ArrayList<LineDataSet> dataSets = new ArrayList<LineDataSet>();
-        dataSets.add(set1); // add the datasets
-
-        // create a data object with the datasets
-        LineData data = new LineData(xVals, dataSets);
-
-        // set data
-        chart.setData(data);
+        Collections.sort(points, new Comparator<Point>() {
+            @Override
+            public int compare(Point lhs, Point rhs) {
+                return lhs.x - rhs.x;
+            }
+        });
+        return points;
     }
 }

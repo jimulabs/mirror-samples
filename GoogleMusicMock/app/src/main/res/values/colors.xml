@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="line_stroke">#55555555</color>
+    <color name="curve_stroke">#ff4f9ec6</color>
+</resources>

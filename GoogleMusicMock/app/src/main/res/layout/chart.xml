@@ -3,8 +3,9 @@
     android:orientation="vertical" android:layout_width="match_parent"
     android:layout_height="match_parent">
 
-    <com.github.mikephil.charting.charts.LineChart
+    <com.jimulabs.googlemusicmock.ChartView
         android:id="@+id/chart"
+        android:layout_margin="5dp"
         android:layout_width="match_parent"
         android:layout_height="match_parent" />
 
