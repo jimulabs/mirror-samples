@@ -1,10 +1,11 @@
 package com.jimulabs.googlemusicmock;
 
+import android.animation.Animator;
 import android.content.Context;
-import android.graphics.Path;
 import android.graphics.Point;
 import android.view.View;
 
+import com.jimulabs.mirroranimator.AnimatorUtils;
 import com.jimulabs.mirroranimator.MirrorAnimator;
 import com.jimulabs.mirroranimator.MirrorAnimatorScript;
 
@@ -30,21 +31,63 @@ public class ChartScript extends MirrorAnimatorScript {
     protected void enterSandbox() {
         ChartView chart = (ChartView) $("chart").getView();
 //        chart.setSpanY(0.2f);
-        List<Point> points = createRandomPoints(20, chart.getMeasuredWidth(), chart.getMeasuredHeight()/3);
-        chart.setData(points.toArray(new Point[0]));
+        int count = 20;
+        List<Point> points = createRandomPoints(count, chart.getMeasuredWidth(), chart.getMeasuredHeight() / 3);
+        chart.setData(points.toArray(new Point[0]), createHighlightIndices(5, count));
 
-        sq(exit(), enter()).start();
-//        sq(exit(), enter(), exit(), enter()).start();
-//        enter().start();
-//        exit().start();
+        List<ChartView.HighlightDot> dots = chart.getHighlightDots();
+
+        setGlobalSpeed(1);
+
+//        enter(dots).start();
+        sq(enter(dots), exit(dots), enter(dots)).start();
     }
 
-    public MirrorAnimator exit() {
-        return sq(shrinkY(), shrinkX());
+    public MirrorAnimator showHighlights(List<ChartView.HighlightDot> dots) {
+        Collections.sort(dots, new Comparator<ChartView.HighlightDot>() {
+            @Override
+            public int compare(ChartView.HighlightDot lhs, ChartView.HighlightDot rhs) {
+                return lhs.x - rhs.x;
+            }
+        });
+
+        List<MirrorAnimator> animators = new ArrayList<>(dots.size());
+        for (int i=0;i<dots.size();i++) {
+            MirrorAnimator showDot = wrapToAnimate(dots.get(i)).animator("radius", 0, 8f).duration(200);
+            animators.add(showDot.startDelay(150 * i));
+        }
+
+        return tg(animators);
     }
 
-    public MirrorAnimator enter() {
-        return sq(expandX(), expandY());
+    private int[] createHighlightIndices(int highlightCount, int totalCount) {
+        int[] result = new int[highlightCount];
+        Random r = new Random();
+        for (int i = 0; i < highlightCount; i++) {
+            result[i] = r.nextInt(totalCount);
+        }
+        return result;
+    }
+
+    public MirrorAnimator exit(List<ChartView.HighlightDot> dots) {
+        return sq(hideDots(dots), shrinkY(), shrinkX()).startDelay(1000);
+    }
+
+    public MirrorAnimator hideDots(List<ChartView.HighlightDot> dots) {
+        List<MirrorAnimator> animators = new ArrayList<>(dots.size());
+        for (int i=0;i<dots.size();i++) {
+            MirrorAnimator showDot = wrapToAnimate(dots.get(i)).animator("radius", 8f, 0f).duration(200);
+            animators.add(showDot);
+        }
+        return tg(animators);
+    }
+
+    private MirrorAnimator tg(List<MirrorAnimator> animators) {
+        return AnimatorUtils.together(animators);
+    }
+
+    public MirrorAnimator enter(List<ChartView.HighlightDot> dots) {
+        return sq(expandX(), expandY(), showHighlights(dots));
     }
 
     public MirrorAnimator shrinkX() {

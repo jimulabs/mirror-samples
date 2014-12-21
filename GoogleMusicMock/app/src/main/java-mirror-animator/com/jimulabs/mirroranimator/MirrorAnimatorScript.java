@@ -6,6 +6,8 @@ import android.view.View;
 
 import com.jimulabs.mirror.model.ResRef;
 
+import java.util.List;
+
 /**
  * Created by lintonye on 14-12-16.
  */
@@ -59,7 +61,7 @@ public abstract class MirrorAnimatorScript {
         return together(animators);
     }
 
-    private MirrorAnimator together(MirrorAnimator... animators) {
+    protected MirrorAnimator together(MirrorAnimator... animators) {
         return AnimatorUtils.together(animators);
     }
 
@@ -67,7 +69,15 @@ public abstract class MirrorAnimatorScript {
         return sequence(animators);
     }
 
-    private MirrorAnimator sequence(MirrorAnimator... animators) {
+    protected MirrorAnimator sq(List<MirrorAnimator> animators) {
+        return AnimatorUtils.sequence(animators);
+    }
+
+    protected MirrorWrap wrapToAnimate(Object obj) {
+        return new MirrorWrap(obj);
+    }
+
+    protected MirrorAnimator sequence(MirrorAnimator... animators) {
         return AnimatorUtils.sequence(animators);
     }
 

@@ -8,10 +8,11 @@ import android.view.View;
 /**
  * Created by lintonye on 14-12-16.
  */
-public class MirrorView {
+public class MirrorView extends MirrorWrap {
     private final View mView;
 
     public MirrorView(View view) {
+        super(view);
         mView = view;
     }
 
@@ -37,15 +38,6 @@ public class MirrorView {
 
     public int getHeight() {
         return mView.getMeasuredHeight();
-    }
-
-
-    public MirrorAnimator animator(String property, int... values) {
-        return AnimatorUtils.animator(mView, property, values);
-    }
-
-    public MirrorAnimator animator(String property, float... values) {
-        return AnimatorUtils.animator(mView, property, values);
     }
 
     public int getTop() {

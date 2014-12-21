@@ -9,6 +9,10 @@ import android.util.AttributeSet;
 import android.util.TypedValue;
 import android.view.View;
 
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.List;
+
 /**
  * Created by lintonye on 2014-12-20.
  */
@@ -19,6 +23,8 @@ public class ChartView extends View {
     private float mSpanY = 1;
     private float mSpanX = 1;
     private Path mPath;
+    private int[] mHighlightIndices;
+    private List<HighlightDot> mHighlightDots = Collections.emptyList();
 
     public ChartView(Context context) {
         this(context, null);
@@ -42,13 +48,57 @@ public class ChartView extends View {
                 setColor(context.getResources().getColor(R.color.curve_stroke));
                 setStrokeWidth(dp2px(5));
                 setStrokeCap(Paint.Cap.ROUND);
+                setAntiAlias(true);
             }
         };
     }
 
-    public void setData(Point... points) {
+    public void setData(Point[] points, int[] highlightIndices) {
         mPoints = points;
+        mHighlightIndices = highlightIndices;
+        mHighlightDots = createHighlightDots(points, highlightIndices);
         updatePath();
+    }
+
+    private List<HighlightDot> createHighlightDots(Point[] points, int[] highlightIndices) {
+        List<HighlightDot> dots = new ArrayList<>(highlightIndices.length);
+        for (int idx : highlightIndices) {
+            Point p = points[idx];
+            dots.add(new HighlightDot(this, p.x, p.y));
+        }
+        return dots;
+    }
+
+    public static class HighlightDot {
+        public final int x;
+        public final int y;
+        private final Paint mPaint;
+        private final View mOwner;
+        private float mRadius = 8;
+
+        public HighlightDot(View owner, int x, int y) {
+            this.x = x;
+            this.y = y;
+            mOwner = owner;
+            mPaint = new Paint() {
+                {
+                    setStyle(Style.STROKE);
+                    setStrokeWidth(5);
+                    setAntiAlias(true);
+                }
+            };
+        }
+
+        public void setRadius(float radius) {
+            mRadius = radius;
+            float strokeWidth = Math.max(1, Math.min(5, radius / 2));
+            mPaint.setStrokeWidth(strokeWidth);
+            mOwner.invalidate();
+        }
+
+        public void onDraw(Canvas canvas) {
+            canvas.drawCircle(x, y, mRadius, mPaint);
+        }
     }
 
     private Path points2Path(Point... points) {
@@ -77,7 +127,7 @@ public class ChartView extends View {
 
     private int computeMidY(Point[] points) {
         int minY = 10000, maxY = 0;
-        for (Point p: points) {
+        for (Point p : points) {
             minY = Math.min(minY, p.y);
             maxY = Math.max(maxY, p.y);
         }
@@ -103,6 +153,13 @@ public class ChartView extends View {
         super.onDraw(canvas);
         drawLines(canvas, 8);
         drawCurve(canvas);
+        drawHighlightDots(canvas);
+    }
+
+    private void drawHighlightDots(Canvas canvas) {
+        for (HighlightDot dot:mHighlightDots) {
+            dot.onDraw(canvas);
+        }
     }
 
     private void drawCurve(Canvas canvas) {
@@ -145,5 +202,9 @@ public class ChartView extends View {
     public void setSpanX(float spanX) {
         mSpanX = spanX;
         updatePath();
+    }
+
+    public List<HighlightDot> getHighlightDots() {
+        return mHighlightDots;
     }
 }
