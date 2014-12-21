@@ -31,7 +31,7 @@ public class MirrorAnimatorSet extends MirrorAnimator {
 
     private List<Animator> collectAnimators(List<MirrorAnimator> animators) {
         List<Animator> result = new ArrayList<>(animators.size());
-        for (MirrorAnimator a:animators) {
+        for (MirrorAnimator a : animators) {
             result.add(a.getAnimator());
         }
         return result;
@@ -65,7 +65,27 @@ public class MirrorAnimatorSet extends MirrorAnimator {
 
     @Override
     public long getDuration() {
-        return mSet.getDuration();
+        if (mOrdering == Ordering.Together) {
+            return maxDuration(mAnimators);
+        } else {
+            return consecutiveDuration(mAnimators);
+        }
+    }
+
+    private long consecutiveDuration(List<MirrorAnimator> animators) {
+        long total = 0;
+        for (MirrorAnimator a : animators) {
+            total += a.getStartDelay() + a.getDuration();
+        }
+        return total;
+    }
+
+    private long maxDuration(List<MirrorAnimator> animators) {
+        long max = 0;
+        for (MirrorAnimator a : animators) {
+            max = Math.max(max, a.getStartDelay() + a.getDuration());
+        }
+        return max;
     }
 
     @Override

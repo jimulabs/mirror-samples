@@ -31,6 +31,10 @@ public class MirrorView {
         return animator("bottom", values);
     }
 
+    public MirrorAnimator alpha(float... values) {
+        return animator("alpha", values);
+    }
+
     public int getHeight() {
         return mView.getMeasuredHeight();
     }
@@ -39,7 +43,6 @@ public class MirrorView {
     public MirrorAnimator animator(String property, int... values) {
         return AnimatorUtils.animator(mView, property, values);
     }
-
 
     public MirrorAnimator animator(String property, float... values) {
         return AnimatorUtils.animator(mView, property, values);

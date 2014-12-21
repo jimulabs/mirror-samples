@@ -78,17 +78,15 @@ public abstract class MirrorAnimator {
         stageSetter.setup(animatorStartTimes);
     }
 
-    private void collectStartTime(MirrorAnimator animator, List<Pair<MirrorObjectAnimator, Long>> output, int startTime) {
+    private void collectStartTime(MirrorAnimator animator, List<Pair<MirrorObjectAnimator, Long>> output, long startTime) {
         if (animator instanceof MirrorAnimatorSet) {
             MirrorAnimatorSet set = (MirrorAnimatorSet) animator;
-            int accuTimeBefore = 0;
+            long accuTimeBeforeMe = set.getStartDelay();
             for (MirrorAnimator c : set.getChildAnimations()) {
-                if (set.getOrdering() == MirrorAnimatorSet.Ordering.Together) {
-                    collectStartTime(c, output, startTime);
-                } else {
-                    collectStartTime(c, output, startTime + accuTimeBefore);
+                collectStartTime(c, output, startTime + accuTimeBeforeMe);
+                if (set.getOrdering() == MirrorAnimatorSet.Ordering.Sequentially) {
+                    accuTimeBeforeMe += c.getStartDelay() + c.getDuration();
                 }
-                accuTimeBefore += c.getStartDelay() + c.getDuration();
             }
         } else if (animator instanceof MirrorObjectAnimator) {
             MirrorObjectAnimator o = (MirrorObjectAnimator) animator;
@@ -99,7 +97,7 @@ public abstract class MirrorAnimator {
     }
 
     private static class UseFirstFrameOnlyStageSetter implements StageSetter {
-        private static final String LOG_TAG = "FirstOccurrenceOnly";
+        private static final String LOG_TAG = "UseFirstFrameOnlyStageSetter";
         private static final List<String> PROPS_AFFECTED_BY_LAYOUT = Arrays.asList(new String[]{"left", "right", "top", "bottom"});
         private Map<Object, Set<String>> mRegistry = new HashMap<>();
 
