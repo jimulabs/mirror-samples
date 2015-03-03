@@ -25,16 +25,10 @@ android {
     lintOptions {
         disable 'InvalidPackage'
     }
-
-    sourceSets {
-        main.java.srcDirs('src/main/java', 'src/main/java-mirror-animator', 'mirror/java')
-    }
 }
 
-//TODO remove after mirror animator stuff is settled and moved to Mirror project
-task jar(type: Jar, dependsOn: "compileDebugJava") {
-    from 'build/intermediates/classes/debug'
-    include 'com/jimulabs/mirroranimator/'
+repositories {
+    maven { url 'http://oss.sonatype.org/content/repositories/snapshots' }
 }
 
 dependencies {
@@ -42,4 +36,7 @@ dependencies {
     compile 'com.android.support:appcompat-v7:21.0.2'
     compile 'com.android.support:recyclerview-v7:21.0.+'
     compile 'com.jakewharton:butterknife:6.0.0'
+
+    compile 'com.jimulabs.mirrorsandbox:mirror-sandbox:0.2.0-SNAPSHOT@aar'
+    compile 'com.jimulabs.motionkit:motion-kit:0.1.0-SNAPSHOT@aar'
 }

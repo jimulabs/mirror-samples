@@ -5,6 +5,8 @@ import android.app.Activity;
 import android.os.Bundle;
 import android.view.Menu;
 
+import com.android.debug.hv.ViewServer;
+
 public class ReadActivity extends Activity {
 
     @Override
@@ -14,6 +16,19 @@ public class ReadActivity extends Activity {
         ActionBar actionBar = getActionBar();
         setTitle(R.string.read_activity_title);
         actionBar.setDisplayHomeAsUpEnabled(true);
+        ViewServer.get(this).addWindow(this);
+    }
+
+    @Override
+    protected void onDestroy() {
+        super.onDestroy();
+        ViewServer.get(this).removeWindow(this);
+    }
+
+    @Override
+    protected void onResume() {
+        super.onResume();
+        ViewServer.get(this).setFocusedWindow(this);
     }
 
     @Override

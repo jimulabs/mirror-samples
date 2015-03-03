@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+             android:layout_width="match_parent"
+             android:layout_height="match_parent">
+
+
+    <ImageView
+        android:id="@+id/fireworks"
+        android:src="@drawable/fireworks"
+        android:scaleType="centerCrop"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"/>
+
+    <LinearLayout
+        android:id="@+id/white_bg"
+        android:orientation="vertical"
+        android:background="?android:attr/windowBackground"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="50dp"
+            android:textSize="30sp"
+            android:text="Mirror Sandbox"
+            android:id="@+id/sandbox"
+            android:textStyle="bold"
+            android:layout_gravity="center_horizontal"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceLarge"
+            android:text="Yes! Hot-swapping Java code!"
+            android:gravity="center"
+            android:layout_marginTop="20dp"
+            android:scaleX="0"
+            android:scaleY="0"
+            android:id="@+id/text1"
+            android:layout_gravity="center_horizontal"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceLarge"
+            android:layout_marginTop="20dp"
+            android:text="For custom views and animations"
+            android:gravity="center"
+            android:alpha="0"
+            android:id="@+id/text2"
+            android:layout_gravity="center_horizontal"/>
+
+        <com.jimulabs.googlemusicmock.ChartView
+            android:id="@+id/chart"
+            android:layout_margin="5dp"
+            android:layout_weight="1"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"/>
+
+
+    </LinearLayout>
+</FrameLayout>
