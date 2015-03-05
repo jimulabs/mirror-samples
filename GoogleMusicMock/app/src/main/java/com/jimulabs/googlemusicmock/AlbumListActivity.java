@@ -13,8 +13,10 @@ import android.view.View;
 import android.view.ViewAnimationUtils;
 import android.view.ViewGroup;
 import android.widget.ImageView;
+import android.widget.TextView;
 
 import com.jimulabs.googlemusicmock.box.AlbumListBox;
+import com.jimulabs.mirrorsandbox.mockdata.MockData;
 
 import butterknife.ButterKnife;
 import butterknife.InjectView;
@@ -49,6 +51,10 @@ public class AlbumListActivity extends ActionBarActivity {
         private final OnVHClickedListener mListener;
         @InjectView(R.id.album_art)
         ImageView albumArt;
+        @InjectView(R.id.name)
+        TextView name;
+        @InjectView(R.id.artist)
+        TextView artist;
 
         public AlbumVH(View itemView, OnVHClickedListener listener) {
             super(itemView);
@@ -91,6 +97,9 @@ public class AlbumListActivity extends ActionBarActivity {
             @Override
             public void onBindViewHolder(AlbumVH holder, int position) {
                 holder.albumArt.setImageResource(albumArts[position % albumArts.length]);
+                MockData md = new MockData();
+                holder.name.setText(md.phrase());
+                holder.artist.setText(md.personName());
             }
 
             @Override
