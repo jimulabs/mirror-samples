@@ -1,5 +1,6 @@
 package com.jimulabs.googlemusicmock;
 
+import android.app.ActivityOptions;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.ActionBarActivity;
@@ -9,8 +10,11 @@ import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.view.ViewAnimationUtils;
 import android.view.ViewGroup;
 import android.widget.ImageView;
+
+import com.jimulabs.googlemusicmock.box.AlbumListBox;
 
 import butterknife.ButterKnife;
 import butterknife.InjectView;
@@ -24,6 +28,7 @@ public class AlbumListActivity extends ActionBarActivity {
 
     @InjectView(R.id.toolbar)
     Toolbar mToolbar;
+    private AlbumListBox mAlbumListBox;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -32,6 +37,7 @@ public class AlbumListActivity extends ActionBarActivity {
 
         ButterKnife.inject(this);
         mToolbar.inflateMenu(R.menu.menu_album_list);
+        mAlbumListBox = new AlbumListBox(getWindow().getDecorView());
         populate();
     }
 
@@ -58,8 +64,6 @@ public class AlbumListActivity extends ActionBarActivity {
     }
 
     private void populate() {
-        StaggeredGridLayoutManager lm = new StaggeredGridLayoutManager(4, StaggeredGridLayoutManager.VERTICAL);
-        mAlbumList.setLayoutManager(lm);
         final int[] albumArts = {R.drawable.christina,
                 R.drawable.ellie,
                 R.drawable.foster,
@@ -78,6 +82,8 @@ public class AlbumListActivity extends ActionBarActivity {
                         intent.putExtra(AlbumDetailActivity.EXTRA_ALBUM_ART_RESID, albumArtResId);
 
                         View sharedView = vh.albumArt;
+                        ActivityOptions ops = ActivityOptions.makeSceneTransitionAnimation(AlbumListActivity.this, sharedView, "albumArt");
+                        startActivity(intent, ops.toBundle());
                     }
                 });
             }
@@ -95,7 +101,6 @@ public class AlbumListActivity extends ActionBarActivity {
         };
         mAlbumList.setAdapter(adapter);
     }
-
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {

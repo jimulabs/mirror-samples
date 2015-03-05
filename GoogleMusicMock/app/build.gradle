@@ -37,6 +37,9 @@ dependencies {
     compile 'com.android.support:recyclerview-v7:21.0.+'
     compile 'com.jakewharton:butterknife:6.0.0'
 
-    compile 'com.jimulabs.mirrorsandbox:mirror-sandbox:0.2.0-SNAPSHOT@aar'
-    compile 'com.jimulabs.motionkit:motion-kit:0.1.0-SNAPSHOT@aar'
+    compile 'com.jimulabs.mirrorsandbox:mirror-sandbox:0.2.0'
+    compile 'com.jimulabs.motionkit:motion-kit:0.1.1-SNAPSHOT'
+
+    compile 'org.lucasr.twowayview:core:1.0.0-SNAPSHOT@aar'
+    compile 'org.lucasr.twowayview:layouts:1.0.0-SNAPSHOT@aar'
 }

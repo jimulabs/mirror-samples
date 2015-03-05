@@ -1,11 +1,20 @@
 package com.jimulabs.googlemusicmock;
 
+import android.animation.Animator;
 import android.app.Activity;
 import android.os.Bundle;
+import android.transition.Transition;
+import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.view.ViewGroup;
+import android.view.ViewTreeObserver;
+import android.view.Window;
 import android.widget.ImageView;
+
+import com.jimulabs.googlemusicmock.box.AlbumDetailBox;
+import com.jimulabs.motionkit.MirrorAnimator;
 
 import butterknife.ButterKnife;
 import butterknife.InjectView;
@@ -18,14 +27,60 @@ public class AlbumDetailActivity extends Activity {
     @InjectView(R.id.album_art)
     ImageView albumArtView;
     @InjectView(R.id.title_container)
-    View titleContainer;
+    View cyanPanel;
+    @InjectView(R.id.info_container)
+    View whitePanel;
+    @InjectView(R.id.fab)
+    View fab;
+    private AlbumDetailBox mBox;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_album_detail);
         ButterKnife.inject(this);
+        mBox = new AlbumDetailBox(getWindow().getDecorView());
         populate();
+        initTransitions();
+    }
+
+
+
+    private void initTransitions() {
+        final Window window = getWindow();
+        window.getDecorView().getViewTreeObserver().addOnGlobalLayoutListener(new ViewTreeObserver.OnGlobalLayoutListener() {
+            @Override
+            public void onGlobalLayout() {
+                mBox.enterAnimation().setupStage();
+            }
+        });
+
+        window.getEnterTransition().addListener(new Transition.TransitionListener() {
+            @Override
+            public void onTransitionStart(Transition transition) {
+
+            }
+
+            @Override
+            public void onTransitionEnd(Transition transition) {
+                mBox.enterAnimation().start();
+            }
+
+            @Override
+            public void onTransitionCancel(Transition transition) {
+
+            }
+
+            @Override
+            public void onTransitionPause(Transition transition) {
+
+            }
+
+            @Override
+            public void onTransitionResume(Transition transition) {
+
+            }
+        });
     }
 
     private void populate() {
@@ -34,18 +89,34 @@ public class AlbumDetailActivity extends Activity {
     }
 
     @Override
-    public void finish() {
-        super.finish();
+    public void finishAfterTransition() {
+        MirrorAnimator mirrorAnimator = mBox.exitAnimation();
+        mirrorAnimator.getAnimator().addListener(new Animator.AnimatorListener() {
+            @Override
+            public void onAnimationStart(Animator animation) {
+
+            }
+
+            @Override
+            public void onAnimationEnd(Animator animation) {
+                superFinishAfterTransition();
+            }
+
+            @Override
+            public void onAnimationCancel(Animator animation) {
+
+            }
+
+            @Override
+            public void onAnimationRepeat(Animator animation) {
+
+            }
+        });
+        mirrorAnimator.start();
     }
 
-    @Override
-    public void onBackPressed() {
-        super.onBackPressed();
-    }
-
-    @Override
-    protected void onStart() {
-        super.onStart();
+    private void superFinishAfterTransition() {
+        super.finishAfterTransition();
     }
 
     @Override
