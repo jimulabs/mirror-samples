@@ -1,6 +1,8 @@
 package com.jimulabs.googlemusicmock.box;
 
 import android.animation.Animator;
+import android.animation.ObjectAnimator;
+import android.animation.ValueAnimator;
 import android.util.Log;
 import android.view.View;
 import android.view.ViewAnimationUtils;
@@ -44,6 +46,8 @@ public class AlbumDetailBox extends MirrorSandboxBase {
     public void $onLayoutDone(View rootView) {
         enterAnimation().start();
 //        exitAnimation().start();
+//        ValueAnimator a = ObjectAnimator.ofFloat(fab, "scaleX", 0, 1).setDuration(1000);
+//        a.start();
     }
 
     public MirrorAnimator exitAnimation() {

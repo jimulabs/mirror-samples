@@ -9,21 +9,33 @@ of sample data, please see http://jimulabs.com/sample-data-specifications/ -->
             <items layout="@layout/album_grid_item" count="3">
                 <_item>
                     <album_art src="@drawable/kodaline" />
+                    <name>Perfect perfect world</name>
+                    <artist>Kodaline</artist>
                 </_item>
                 <_item>
                     <album_art src="@drawable/christina" />
+                    <name>Codementor rocks!</name>
+                    <artist>Christina</artist>
                 </_item>
                 <_item>
                     <album_art src="@drawable/foster" />
+                    <name>Blah blah</name>
+                    <artist>Foster</artist>
                 </_item>
                 <_item>
                     <album_art src="@drawable/keane" />
+                    <name>Yada yada</name>
+                    <artist>Keane</artist>
                 </_item>
                 <_item>
                     <album_art src="@drawable/pinkrobots" />
+                    <name>Hello World</name>
+                    <artist>Pink Robots</artist>
                 </_item>
                 <_item>
                     <album_art src="@drawable/ellie" />
+                    <name>Yada yada</name>
+                    <artist>Ellie</artist>
                 </_item>
             </items>
         </album_list>
