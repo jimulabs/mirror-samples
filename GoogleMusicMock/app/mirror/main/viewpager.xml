@@ -1,0 +1,45 @@
+<!-- [ Mirror metadata ] generatedAt: 1425565089039 -->
+<!-- Generated screen file. Fill the id tags below with content with
+which to populate your previewed layout. For a complete specification
+of sample data, please see http://jimulabs.com/sample-data-specifications/ 
+
+Valid attributes on <screen> tag: theme="@style/someTheme" inEditMode="false" overlay="@drawable/mockup" -->
+<screen theme="@android:style/Theme.DeviceDefault">
+    <actionbar showTabsFor="@id/pager"/>
+    <_content layout="@layout/viewpager">
+        <pager>
+            <_page title="page1" layout="@layout/activity_album_list_only">
+                <album_list layoutManager="staggeredGrid:2">
+                    <!-- Examples of valid layoutManager values: "linear", "staggeredGrid:5:horizontal", "staggeredGrid:4" -->
+                    <items layout="@layout/album_grid_item" count="3">
+                        <_item>
+                            <album_art src="@drawable/kodaline"/>
+                        </_item>
+                        <_item>
+                            <album_art src="@drawable/christina"/>
+                        </_item>
+                        <_item>
+                            <album_art src="@drawable/foster"/>
+                        </_item>
+                        <_item>
+                            <album_art src="@drawable/keane"/>
+                        </_item>
+                        <_item>
+                            <album_art src="@drawable/pinkrobots"/>
+                        </_item>
+                        <_item>
+                            <album_art src="@drawable/ellie"/>
+                        </_item>
+                    </items>
+                </album_list>
+            </_page>
+            <_page title="page2" layout="@layout/activity_album_detail">
+                <album_art src="@drawable/kodaline" />
+                <title>Kodaline</title>
+                <subtitle>In a Perfect World</subtitle>
+                <name>One Day</name>
+                <time>4:15</time>
+            </_page>
+        </pager>
+    </_content>
+</screen>

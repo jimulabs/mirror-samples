@@ -1,0 +1,1 @@
+This is the demo project used in Linton Ye's [Codementor office hour session](https://www.codementor.io/officehours/1461350922/live-coding-android-ui-layouts-and-animations-w-linton-ye-of-mirror-for-android-studio) about Android UI development.

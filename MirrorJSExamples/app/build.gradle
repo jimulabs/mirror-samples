@@ -13,7 +13,7 @@ android {
     }
     buildTypes {
         release {
-            runProguard false
+            minifyEnabled false
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
         }
     }
@@ -21,4 +21,6 @@ android {
 
 dependencies {
     compile fileTree(dir: 'libs', include: ['*.jar'])
+    compile files('/Users/lintonye/git-repos/layout_previewer/Lens/build/libs/Lens-2.3-beta.jar')
+    compile 'org.mozilla:rhino:1.7R4'
 }

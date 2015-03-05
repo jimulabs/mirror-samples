@@ -1,9 +1,0 @@
-<!-- Generated template screen file. Fill the id tags below with content
-with which to populate your previewed layout. For help with sample
-data, please see http://jimulabs.com/sample-data-specifications/ -->
-<screen>
-    <_content layout="@layout/drawer_seperator">
-        <header text="textview" />
-        <divider></divider>
-    </_content>
-</screen>
