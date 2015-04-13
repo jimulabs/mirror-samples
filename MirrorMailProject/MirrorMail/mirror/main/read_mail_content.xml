@@ -1,0 +1,40 @@
+<_content layout="activity_read">
+    <subject>Welcome to San Francisco!</subject>
+    <timestamp>10 jun 2013, 14:15</timestamp>
+    <sender_name>Kirill Zubovsky</sender_name>
+    <attachment_size_info>6 attachments, 16.5 Mb</attachment_size_info>
+    <attachments_list>
+        <items layout="attachment_preview_item">
+            <_item>
+                <preview_image src="images/preview_image1.png"/>
+                <file_size>2 MB</file_size>
+            </_item>
+            <_item>
+                <preview_image src="images/preview_image3.png"/>
+                <file_size>2 MB</file_size>
+            </_item>
+            <_item>
+                <preview_image src="images/preview_image2.png"/>
+                <file_size>3 MB</file_size>
+            </_item>
+            <_item>
+                <preview_image src="images/preview_image3.png"/>
+                <file_size>4 MB</file_size>
+            </_item>
+            <_item>
+                <preview_image src="images/preview_image1.png"/>
+                <file_size>5 MB</file_size>
+            </_item>
+            <_item>
+                <preview_image src="images/preview_image3.png"/>
+                <file_size>0.5 MB</file_size>
+            </_item>
+        </items>
+    </attachments_list>
+    <email_text>Hey guys,
+        I’ve just come back from my vacation, so check out my latest shots!
+
+        Best regards,
+        Evgeny Belyaev.
+    </email_text>
+</_content>

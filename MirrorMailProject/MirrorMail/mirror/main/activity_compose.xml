@@ -1,0 +1,19 @@
+<screen theme="AppBaseTheme">
+    <actionbar
+            title="COMPOSE"
+            menu="compose_menu"
+            icon="ic_launcher"
+            showHome="true"
+            />
+    <_content layout="activity_compose">
+        <subject>Check out my last shots!</subject>
+        <from_avatar>Kirill Zubovsky</from_avatar>
+        <content>Hey guys,
+
+            I’ve just come back from my vacation, so check out my latest shots!
+
+            Best regards,
+            Evgeny Belyaev.
+        </content>
+    </_content>
+</screen>

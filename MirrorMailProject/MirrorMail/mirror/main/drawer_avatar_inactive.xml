@@ -1,0 +1,8 @@
+<!-- Generated template screen file. Fill the id tags below with content
+with which to populate your previewed layout. For help with sample
+data, please see http://jimulabs.com/sample-data-specifications/ -->
+<screen>
+    <_content layout="@layout/drawer_avatar_inactive">
+        <drawer_avatar></drawer_avatar>
+    </_content>
+</screen>

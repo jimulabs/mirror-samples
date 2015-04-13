@@ -1,0 +1,15 @@
+<!-- Generated template screen file. Fill the id tags below with content
+with which to populate your previewed layout. For help with sample
+data, please see http://jimulabs.com/sample-data-specifications/ -->
+<screen>
+    <_content layout="@layout/mail_list_item">
+        <avatar></avatar>
+        <flag></flag>
+        <time text="textview" />
+        <bullet></bullet>
+        <from text="textview" />
+        <attachment></attachment>
+        <subject text="textview" />
+        <snippet text="textview" />
+    </_content>
+</screen>

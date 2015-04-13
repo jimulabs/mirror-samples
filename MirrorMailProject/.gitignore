@@ -1,5 +1,46 @@
-.gradle
-/local.properties
-/.idea/workspace.xml
-.DS_Store
+# files for the dex VM
+*.dex
+
+# Java class files
+*.class
+
+# generated files
+bin/
+gen/
+.gen/
+target/
 build/
+*~
+
+# Local configuration file (sdk path, etc)
+local.properties
+
+# Eclipse project files
+.settings/
+.metadata/
+.project
+.classpath
+
+# gradle
+.gradle
+build/
+gradle.properties
+
+# IDEA
+.idea/
+*.iml
+
+# Mac
+.DS_Store
+
+# Mirror generated files
+*.ap_
+**/mirror/header
+mirror.yaml
+mirror/mirror
+**/mirror/R.*
+**/mirror/*.ap_
+**/mirror/*.dex
+
+# Trace files
+**/*.trace
