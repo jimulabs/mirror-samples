@@ -57,6 +57,7 @@ public class CircularImageView extends ImageView {
         invalidate();
     }
 
+
     public void setBorderWidth(float borderWidth) {
         mBorderWidth = borderWidth;
     }

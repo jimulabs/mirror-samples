@@ -87,7 +87,6 @@ public class CircularImageView extends ImageView {
 
     private void loadBitmap() {
         BitmapDrawable bitmapDrawable = (BitmapDrawable) getDrawable();
-
         if (bitmapDrawable != null) {
             mImage = bitmapDrawable.getBitmap();
             mShader = new BitmapShader(Bitmap.createScaledBitmap(mImage, mWidth, mHeight, false), Shader.TileMode.CLAMP, Shader.TileMode.CLAMP);
@@ -107,6 +106,7 @@ public class CircularImageView extends ImageView {
             canvas.drawCircle(circleCenter, circleCenter, circleCenter, mPaintBorder);
             // draw bitmap image inside outer circle, leaving a border
             canvas.drawCircle(circleCenter, circleCenter, circleCenter - mBorderWidth, mPaint);
+//            canvas.drawRect(circleCenter - mWidth/2, circleCenter-mWidth/2, circleCenter+mWidth/2, circleCenter+mWidth/2, mPaint);
         }
     }
 
