@@ -1,0 +1,58 @@
+<items layout="mail_list_item">
+    <_item layout="@layout/list_separator">
+        <label>Primary</label>
+    </_item>
+    <_item>
+        <avatar src="images/ava1.png" />
+        <snippet>I've got to admit it's getting better. It's a little better all the time.</snippet>
+        <subject>Have you seen the new version of Mirror?</subject>
+        <time>17:35</time>
+        <from visibility="visible">Paul McCartney</from>
+    </_item>
+    <_item>
+        <avatar src="images/ava2.png" />
+        <snippet>A person who never made a mistake never tried anything new.</snippet>
+        <subject>Relatively speaking</subject>
+        <time>13:21</time>
+        <from>Albert Einstein</from>
+    </_item>
+    <_item>
+        <avatar border_width="8.7dp" borderColor="#f9303f" src="images/ava3.png" />
+        <bullet visibility="visible" />
+        <snippet>Change is the law of life. And those who look only to the past or present are
+            certain to miss the future.
+        </snippet>
+        <subject>The City Upon a Hill</subject>
+        <time>yesterday</time>
+        <from>John F. Kennedy</from>
+    </_item>
+    <_item layout="@layout/list_separator">
+        <label>Social</label>
+    </_item>
+    <_item>
+        <avatar border_color="#000000" borderWidth="5px" src="images/ava4.png" />
+        <flag visibility="visible" />
+        <attachment visibility="visible" />
+        <snippet>I think I have something tonight that's not quite correct for evening wear. Blue
+            suede shoes.
+        </snippet>
+        <subject>Man I love Vegas</subject>
+        <time>Yesterday</time>
+        <from>Elvis Presley</from>
+    </_item>
+    <_item>
+        <avatar src="images/ava5.png" />
+        <snippet>Be nice to nerds. Chances are you'll end up working for one.</snippet>
+        <subject>A trip to India</subject>
+        <time>June 30</time>
+        <from>Bill Gates</from>
+    </_item>
+    <_item>
+        <avatar src="images/ava6.png" />
+        <snippet>If it wasn't for the coffee, I'd have no identifiable personality whatsover.
+        </snippet>
+        <subject>The idea of the new issue</subject>
+        <time>June 30</time>
+        <from>David Letterman</from>
+    </_item>
+</items>

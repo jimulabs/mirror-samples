@@ -51,6 +51,7 @@ mirror/mirror
 **/mirror/R.*
 **/mirror/*.ap_
 **/mirror/*.dex
+**/mirror/.gen
 
 # Trace files
 **/*.trace
